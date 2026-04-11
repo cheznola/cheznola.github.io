@@ -634,13 +634,15 @@ nav {
 <section class="hero">
   <div class="hero-badge fu d1">
     <span class="ldot"></span>
-    5 éditions depuis nov. 2025 · Paris
+    Depuis nov. 2025 · Paris
   </div>
   <span class="hero-wordmark fu d2">Nola</span>
   <h1 class="fu d3">Des dîners qui <em>comptent,</em><br>entre Product People.</h1>
   <div class="hero-tags fu d3">
     <span class="tag">Product</span>
-    <span class="tag">People</span>
+    <span class="tag">Design</span>
+    <span class="tag">Data</span>
+    <span class="tag">Tech</span>
   </div>
   <p class="hero-sub fu d4">1x/mois. En petit comité.</p>
   <div class="asso-pill fu d4">Association loi 1901 · Paris</div>
@@ -660,9 +662,8 @@ nav {
 <!-- STATS -->
 <div class="stats-strip">
   <div class="stat-item">
-    <span class="stat-n">5</span>
-    <span class="stat-l">Éditions</span>
-    <span class="stat-note">depuis nov. 2025</span>
+    <span class="stat-n">1</span>
+    <span class="stat-l">Édition mensuelle</span>
   </div>
   <div class="stat-item">
     <span class="stat-n">150+</span>
@@ -673,8 +674,8 @@ nav {
     <span class="stat-l">Tables par édition</span>
   </div>
   <div class="stat-item">
-    <span class="stat-n">4–6</span>
-    <span class="stat-l">Personnes par table</span>
+    <span class="stat-n">4-6</span>
+    <span class="stat-l">Par table</span>
   </div>
 </div>
 
@@ -689,7 +690,7 @@ nav {
     <div class="cd-block"><span class="cd-n" id="cd-s">45</span><span class="cd-l">Sec</span></div>
   </div>
   <br>
-  <div class="spots-pill">4 tables par édition chaque mois · Association loi 1901</div>
+  <div class="spots-pill">Le 2ᵉ mardi de chaque mois</div>
 </section>
 
 <!-- TICKER -->
@@ -737,23 +738,19 @@ nav {
       <div class="how-steps">
         <div class="how-step">
           <div class="step-num">01</div>
-          <div class="step-body"><strong>Tu rejoins Nola</strong><span>On te place pour la soirée.</span></div>
+          <div class="step-body"><strong>Tu rejoins Nola</strong><span>On te place pour la soirée</span></div>
         </div>
         <div class="how-step">
           <div class="step-num">02</div>
-          <div class="step-body"><strong>On compose ta table Originale*</strong><span>Basé sur ton profil et ce qui t'intéresse.</span></div>
+          <div class="step-body"><strong>On compose ta table</strong><span>Selon ton profil et ce qui t'intéresse</span></div>
         </div>
         <div class="how-step">
           <div class="step-num">03</div>
-          <div class="step-body"><strong>Tu reçois la lettre</strong><span>Le lieu, l'heure — t'en fais pas du reste.</span></div>
+          <div class="step-body"><strong>Tu reçois les infos</strong><span>Le lieu, l'heure - on s’occupe du reste</span></div>
         </div>
         <div class="how-step">
           <div class="step-num">04</div>
-          <div class="step-body"><strong>Des échanges curieux, au sujet des gens</strong></div>
-        </div>
-        <div class="how-step">
-          <div class="step-num">05</div>
-          <div class="step-body"><strong>Tu vis l'expérience</strong><span>On prend les meilleures décisions à table.</span></div>
+          <div class="step-body"><strong>Tu vis l'expérience</strong><span>Des échanges sincères, autour d’un bon dîner.</span></div>
         </div>
         <a href="#" class="btn-primary" style="margin-top:28px;display:inline-flex;">Être prévenu·e →</a>
       </div>
@@ -766,30 +763,30 @@ nav {
           <div class="tc">
             <div class="tc-l">
               <div class="avs"><div class="mav">PM</div><div class="mav">DS</div><div class="mav">DA</div><div class="mav">CT</div></div>
-              <span class="tc-name">Table Sésame</span>
+              <span class="tc-name">Table Mid Level</span>
             </div>
             <span class="tc-s s-full">Complète</span>
           </div>
           <div class="tc">
             <div class="tc-l">
               <div class="avs"><div class="mav">PO</div><div class="mav">DS</div><div class="mav">PM</div></div>
-              <span class="tc-name">Table Rimbaud</span>
+              <span class="tc-name">Table Entrepreneur</span>
             </div>
             <span class="tc-s s-open">1 place</span>
           </div>
           <div class="tc">
             <div class="tc-l">
               <div class="avs"><div class="mav">EM</div><div class="mav">PM</div></div>
-              <span class="tc-name">Table Volta</span>
+              <span class="tc-name">Table Senior</span>
             </div>
             <span class="tc-s s-open">2 places</span>
           </div>
           <div class="tc" style="border:1.5px dashed rgba(200,117,66,.4);background:var(--brown-pale);">
             <div class="tc-l">
               <div class="avs"><div class="mav" style="background:var(--brown-pale);color:var(--brown-deep);">TK</div></div>
-              <span class="tc-name" style="color:var(--brown-deep);font-size:12px;">× Le Ticket — bientôt</span>
+              <span class="tc-name" style="color:var(--brown-deep);font-size:12px;">Nola × Le Ticket</span>
             </div>
-            <span class="tc-s" style="background:var(--brown-pale);color:var(--brown-deep);border:1px solid rgba(200,117,66,.3);">En vue</span>
+            <span class="tc-s" style="background:var(--brown-pale);color:var(--brown-deep);border:1px solid rgba(200,117,66,.3);">Bientôt</span>
           </div>
         </div>
         <div class="hv-foot">4 tables par édition · Association loi 1901</div>
@@ -813,13 +810,13 @@ nav {
 <!-- NOLA ORIGINALS -->
 <section class="section-originals" id="originals">
   <div class="orig-header">
-    <span class="eyebrow">Le tarif</span>
-    <h2>Nola Originals</h2>
+    <span class="eyebrow">Format Originals</span>
+    <h2>Le billet</h2>
     <p class="orig-lead-bold">4 tables simultanées. Une fois par mois.</p>
     <p class="orig-lead">Jamais la même table. Jamais le même resto.</p>
   </div>
 
-  <div class="orig-price">10€ <span>par dîner</span></div>
+  <div class="orig-price">10€</div>
 
   <ul class="orig-feats">
     <li>Accès à un dîner Nola</li>
@@ -842,54 +839,56 @@ nav {
     <div class="conv-img">Photo</div>
     <div class="conv-text">
       <span class="eyebrow">Les conversations</span>
-      <h2>Les conversations</h2>
-      <span class="conv-meta">Ce qu'on dit à table · En vrai</span>
+      <h2>Ce qu'on dit à table</h2>
+      <span class="conv-meta">En vrai</span>
       <div class="conv-quotes">
-        <div class="conv-q">« Ce que fais-peut-être, mais, refresh seulement... »</div>
-        <div class="conv-q">« Quel est le cadre pour vous faire confiance ? »</div>
-        <div class="conv-q">« Manque-je un produit de cette ? »</div>
+        <div class="conv-q">« L’IA me fait produire plus, mais réfléchir moins.»</div>
+        <div class="conv-q">« Être first PM est beaucoup plus politique que produit.</div>
+        <div class="conv-q">« Manager ou revenir au build ?»</div>
+        <div class="conv-q">« Lancer un produit de zéro..»</div>
       </div>
-      <p class="conv-note">Pas de style. Pas de slide.<br>Ce qu'on dit à table — ça reste à table.</p>
-      <a href="#" class="btn-primary" style="margin-top:24px;display:inline-flex;">Partager des conversations →</a>
+      <p class="conv-note">Pas de style. Pas de slide.<br>Juste des conversations entre pairs.</p>
+      <a href="#" class="btn-primary" style="margin-top:24px;display:inline-flex;">Suivre Nola →</a>
     </div>
   </div>
 </section>
 
 <!-- MID CTA -->
 <section class="section-mid-cta">
-  <span class="mid-logo">Nola</span>
-  <p class="mid-desc">Sage d'IRL Product People curieux de tracer à Paris.</p>
-  <p class="mid-desc">PM, CTO, Designers, Data — toutes les tables sont différentes.</p>
-  <span class="mid-italic">Et toi, tu serais qui ?</span>
-  <a href="#" class="btn-white">Être prévenu·e →</a>
+  <span class="mid-logo">Nola.</span>
+  <p class="mid-desc">Déjà +150 Product People curieux de tester à Paris.</p>
+  <p class="mid-desc">PM, CPO, Designers, Data… toutes les tables sont différentes.</p>
+  <span class="mid-italic">👉 Et toi, tu rejoins laquelle ?</span>
+  <a href="#" class="btn-white">Devenir membre →</a>
 </section>
 
 <!-- FAQ -->
 <section class="section-faq" id="faq">
   <h2>FAQ...</h2>
-  <div class="faq-item"><button class="faq-q">Qui peut rejoindre Nola ?<span class="faq-icon">+</span></button><div class="faq-a">Nola est ouvert aux Product People : PM, CPO, Lead Product, TPM, Designer, Data — tous les rôles qui participent aux décisions produit sont les bienvenus.</div></div>
-  <div class="faq-item"><button class="faq-q">Est-ce que je dois être membre d'une organisation ?<span class="faq-icon">+</span></button><div class="faq-a">Non. Nola est un service ouvert. Vous pouvez rejoindre en tant que personne physique. Nola est une association loi 1901 basée à Paris.</div></div>
-  <div class="faq-item"><button class="faq-q">C'est combien ?<span class="faq-icon">+</span></button><div class="faq-a">10€ par dîner, réglé directement au restaurant. Pas d'abonnement, pas d'engagement. L'adhésion à l'association est incluse dès la première participation.</div></div>
-  <div class="faq-item"><button class="faq-q">Est-ce que c'est régulier ?<span class="faq-icon">+</span></button><div class="faq-a">Un dîner par mois, à Paris. La date et le lieu sont communiqués par email quelques jours avant l'événement.</div></div>
-  <div class="faq-item"><button class="faq-q">Comment sont composées les tables ?<span class="faq-icon">+</span></button><div class="faq-a">Par affinités : centres d'intérêt, posture professionnelle, complémentarité. Pas par titre, ni par entreprise — les meilleures discussions naissent souvent de la diversité.</div></div>
-  <div class="faq-item"><button class="faq-q">Est-ce qu'il y a du réseautage formalisé ?<span class="faq-icon">+</span></button><div class="faq-a">Non. Le format est volontairement sans structure de networking. On dîne, on parle, on voit ce qui se passe.</div></div>
-  <div class="faq-item"><button class="faq-q">Quand faut-il réserver sa place ?<span class="faq-icon">+</span></button><div class="faq-a">Les places sont disponibles 3 semaines avant chaque dîner. Les invitations sont envoyées en priorité aux membres pressentis.</div></div>
-  <div class="faq-item"><button class="faq-q">C'est quoi Product People ?<span class="faq-icon">+</span></button><div class="faq-a">Nola est pensé pour les personnes qui fabriquent des produits numériques — en équipe, avec intention. Pas besoin d'un titre précis : si vous construisez, vous êtes les bienvenu·e·s.</div></div>
+  <div class="faq-item"><button class="faq-q">Qui peut rejoindre Nola ?<span class="faq-icon">+</span></button><div class="faq-a">Aujourd’hui, Nola s’adresse aux Product People : CPO, Lead/Head, PM/PO, Ops, et Product Designers/Tech orientés produit.</div></div>
+  <div class="faq-item"><button class="faq-q">Nola, c'est quoi exactement ?<span class="faq-icon">+</span></button><div class="faq-a">Nola est une association loi 1901. On se retrouve autour de dîners en petit comité. La participation sert à couvrir l’organisation. Le repas est réglé directement au restaurant.</div></div>
+  <div class="faq-item"><button class="faq-q">Comment devenir membre ?<span class="faq-icon">+</span></button><div class="faq-a">L’inscription est gratuite : il suffit de remplir le formulaire pour être alerté·e des dîners à venir. Ensuite, si tu veux participer une première fois, tu règles ton premier billet : l’adhésion est alors activée et offerte la première année.</div></div>
+  <div class="faq-item"><button class="faq-q">Est-ce que c'est régulier ?<span class="faq-icon">+</span></button><div class="faq-a">Un dîner par mois, à Paris. Le 2ᵉ mardi de chaque mois.</div></div>
+  <div class="faq-item"><button class="faq-q">Annulation : que se passe-t-il si je ne peux plus venir ?<span class="faq-icon">+</span></button><div class="faq-a">On ne rembourse pas. Si tu ne peux plus venir, ta place est reportée sur le dîner suivant (dans la limite des places disponibles). Pour qu’on gère ça proprement, préviens-nous dès que possible.</div></div>
+  <div class="faq-item"><button class="faq-q">Combien ça coûte ?<span class="faq-icon">+</span></button><div class="faq-a"><ul><li><strong>Participation :</strong> 10&nbsp;€ <em>(organisation)</em></li><li><strong>Repas :</strong> chacun règle son addition au restaurant</li></ul></div></div>
+  <div class="faq-item"><button class="faq-q">Comment sont composées les tables ?<span class="faq-icon">+</span></button><div class="faq-a">Par sélection humaine : profils proches, niveaux complémentaires, diversité de contextes. L’objectif : des échanges sincères et équilibrés.</div></div>
+  <div class="faq-item"><button class="faq-q">Quand reçoit-on l’adresse du restaurant ?<span class="faq-icon">+</span></button><div class="faq-a">L’adresse exacte est envoyée 3 à 5 jours avant par email, puis rappelée la veille.</div></div>
+  <div class="faq-item"><button class="faq-q">Puis-je venir seul·e ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. La majorité des participant·es viennent seul·es. Les tables sont pensées pour que la conversation démarre naturellement.</div></div>
 </section>
 
 <!-- FOOTER DARK -->
 <div class="footer-dark">
   <div class="footer-hero">
     <div>
-      <span class="footer-hero-logo">Nola</span>
+      <span class="footer-hero-logo">Nola.</span>
       <h3>On ne s'inscrit pas.<br><strong>On y est invité.</strong></h3>
-      <p>Si t'es là c'est qu'on t'a vu.<br>L'invitation arrive quand c'est bien — pas avant.</p>
+      <p>Parce que les meilleures idées naissent...<br>...rarement derrière un écran.</p>
       <a href="#" class="btn-primary">Être prévenu·e →</a>
     </div>
     <div class="footer-hero-img">Photo</div>
   </div>
   <div class="footer-bar">
-    <span class="footer-bar-logo">Nola</span>
+    <span class="footer-bar-logo">Nola.</span>
     <ul class="footer-links">
       <li><a href="#">CGU</a></li>
       <li><a href="#">Confidentialité</a></li>
