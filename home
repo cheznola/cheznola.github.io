@@ -3,11 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nola — Des dîners IRL pour Product People</title>
+
+<!-- ── METAS SEO ── -->
+<title>Nola — Des rencontres qui comptent, entre Product People.</title>
+<meta name="description" content="Des dîners en petit comité entre Product People. Pour prendre le temps d'échanger vraiment et (re)construire son cercle pro, autrement.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cheznola.fr">
+
+<!-- ── OPEN GRAPH ── -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cheznola.fr">
+<meta property="og:title" content="Nola — Des rencontres qui comptent, entre Product People.">
+<meta property="og:description" content="Des tables entre curieux, bienveillants et ambitieux. Pour échanger, s'inspirer et (re)bâtir des liens pro, durablement.">
+<meta property="og:image" content="https://cheznola.fr/nola-preview-v2.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Nola">
+
+<!-- ── TWITTER CARD ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nola — Des rencontres qui comptent, entre Product People.">
+<meta name="twitter:description" content="Des dîners en petit comité entre Product People. Pour prendre le temps d'échanger vraiment et (re)construire son cercle pro, autrement.">
+<meta name="twitter:image" content="https://cheznola.fr/nola-preview-v2.jpg">
+
+<!-- ── FONTS ── -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
+/* ────────────────────────────────────────────
+   RESET & TOKENS
+──────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -16,7 +42,6 @@
   --cream-3:    #E5DDD0;
   --parchment:  #F9F5EE;
   --sage:       #6E7E64;
-  --sage-light: #8A9B80;
   --sage-bg:    #5D6E54;
   --sage-pale:  #EBF0E7;
   --brown:      #C87542;
@@ -28,8 +53,8 @@
   --ink:        #3A342C;
   --muted:      #7A7168;
   --muted-lt:   #A09890;
-  --border:     rgba(58,52,44,0.10);
-  --border-2:   rgba(58,52,44,0.16);
+  --border:     rgba(58,52,44,.10);
+  --border-2:   rgba(58,52,44,.16);
   --playpen:    'Playpen Sans', cursive;
   --serif:      'Instrument Serif', Georgia, serif;
   --sans:       'Inter', system-ui, sans-serif;
@@ -47,7 +72,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ── ANIMATIONS ── */
+/* ────────────────────────────────────────────
+   ANIMATIONS
+──────────────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(20px); }
   to   { opacity:1; transform:translateY(0); }
@@ -65,7 +92,9 @@ body {
 .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}
 .d4{animation-delay:.35s}.d5{animation-delay:.45s}
 
-/* ── NAV ── */
+/* ────────────────────────────────────────────
+   NAV
+──────────────────────────────────────────── */
 nav {
   position:fixed; top:0; left:0; right:0; z-index:200;
   height:58px;
@@ -75,44 +104,36 @@ nav {
   backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);
 }
-
 .nav-logo {
   font-family: var(--playpen);
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--brown);
-  text-decoration: none;
-  letter-spacing: -0.3px;
-  line-height: 1;
+  font-weight: 700; font-size: 22px;
+  color: var(--brown); text-decoration: none;
 }
-
 .nav-links { display:flex; gap:28px; list-style:none; }
 .nav-links a {
   font-size:13px; font-weight:400; color:var(--muted);
   text-decoration:none; transition:color .15s;
 }
 .nav-links a:hover { color:var(--ink); }
-
 .nav-cta {
-  font-size:13px; font-weight:700; letter-spacing:.02em;
+  font-size:13px; font-weight:700;
   color:var(--parchment); background:var(--dark);
   border:none; border-radius:6px;
   padding:8px 20px; text-decoration:none;
-  transition:background .15s, transform .12s;
-  white-space: nowrap;
+  transition:background .15s, transform .12s; white-space:nowrap;
 }
 .nav-cta:hover { background:var(--dark-2); transform:translateY(-1px); }
 
-/* ── HERO ── */
+/* ────────────────────────────────────────────
+   HERO
+──────────────────────────────────────────── */
 .hero {
   padding:130px 24px 88px;
   max-width:780px; margin:0 auto; text-align:center;
 }
-
 .hero-badge {
   display:inline-flex; align-items:center; gap:8px;
-  background:var(--brown-pale);
-  border:1px solid rgba(200,117,66,.28);
+  background:var(--brown-pale); border:1px solid rgba(200,117,66,.28);
   border-radius:100px; padding:5px 16px; margin-bottom:28px;
   font-size:12px; font-weight:700; color:var(--brown-deep);
   letter-spacing:.07em; text-transform:uppercase;
@@ -122,97 +143,80 @@ nav {
   background:var(--sage); display:inline-block;
   animation:pulse-dot 2.2s infinite; flex-shrink:0;
 }
-
 .hero-wordmark {
-  font-family: var(--playpen);
-  font-weight: 800;
-  font-size: clamp(52px, 12vw, 96px);
-  color: var(--brown);
-  display: block;
-  line-height: 1;
-  letter-spacing: -1px;
-  margin-bottom: 24px;
+  font-family:var(--playpen); font-weight:800;
+  font-size:clamp(52px,12vw,96px); color:var(--brown);
+  display:block; line-height:1; letter-spacing:-1px; margin-bottom:24px;
 }
-
 .hero h1 {
-  font-weight:800;
-  font-size:clamp(24px, 5vw, 48px);
+  font-weight:800; font-size:clamp(24px,5vw,48px);
   letter-spacing:-1.5px; line-height:1.1;
   color:var(--ink); margin-bottom:22px;
 }
 .hero h1 em {
   font-style:italic; font-family:var(--serif);
-  font-weight:400; letter-spacing:-0.5px; color:var(--brown);
+  font-weight:400; color:var(--brown);
 }
-
-.hero-tags { display:inline-flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
+.hero-tags {
+  display:inline-flex; gap:8px; justify-content:center;
+  flex-wrap:wrap; margin-bottom:14px;
+}
 .tag {
   border:1.5px solid var(--ink); border-radius:100px;
   padding:5px 16px; font-size:12.5px; font-weight:500; color:var(--ink);
 }
-
-.hero-sub { font-size:15px; color:var(--muted); margin-bottom:16px; font-weight:400; }
-
+.hero-sub { font-size:15px; color:var(--muted); margin-bottom:16px; }
 .asso-pill {
   display:inline-flex; align-items:center; gap:6px;
-  background:var(--sage-pale);
-  border:1px solid rgba(110,126,100,.2);
-  border-radius:100px;
-  padding:5px 14px; margin-bottom:36px;
+  background:var(--sage-pale); border:1px solid rgba(110,126,100,.2);
+  border-radius:100px; padding:5px 14px; margin-bottom:36px;
   font-size:11.5px; font-weight:500; color:var(--sage-bg);
 }
-
 .hero-actions {
   display:flex; align-items:center; justify-content:center;
   gap:12px; flex-wrap:wrap; margin-bottom:44px;
 }
-
 .btn-primary {
   display:inline-flex; align-items:center; gap:6px;
   background:var(--brown); color:#fff;
-  font-size:14px; font-weight:700; letter-spacing:.03em;
-  text-decoration:none; padding:13px 28px;
-  border-radius:7px; border:none; cursor:pointer;
-  transition:background .15s, transform .12s;
-  white-space: nowrap;
+  font-size:14px; font-weight:700; text-decoration:none;
+  padding:13px 28px; border-radius:7px; border:none; cursor:pointer;
+  transition:background .15s, transform .12s; white-space:nowrap;
 }
 .btn-primary:hover { background:var(--brown-deep); transform:translateY(-1px); }
-
 .btn-ghost-warm {
   display:inline-flex; align-items:center; gap:6px;
   background:var(--cream); color:var(--ink);
-  font-size:14px; font-weight:500;
-  text-decoration:none; padding:13px 28px;
-  border-radius:7px; border:1px solid var(--border-2); cursor:pointer;
-  transition:background .15s;
-  white-space: nowrap;
+  font-size:14px; font-weight:500; text-decoration:none;
+  padding:13px 28px; border-radius:7px; border:1px solid var(--border-2); cursor:pointer;
+  transition:background .15s; white-space:nowrap;
 }
 .btn-ghost-warm:hover { background:var(--cream-2); }
-
-.hero-proof { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
+.hero-proof {
+  display:flex; align-items:center; justify-content:center;
+  gap:14px; flex-wrap:wrap;
+}
 .av-stack { display:flex; }
 .av {
   width:30px; height:30px; border-radius:50%;
-  border:2px solid var(--parchment);
-  background:var(--cream-2); margin-left:-8px;
-  display:flex; align-items:center; justify-content:center;
+  border:2px solid var(--parchment); background:var(--cream-2);
+  margin-left:-8px; display:flex; align-items:center; justify-content:center;
   font-size:9px; font-weight:700; color:var(--muted);
 }
 .av:first-child { margin-left:0; }
 .proof-txt { font-size:13px; color:var(--muted); }
 .proof-txt strong { color:var(--ink); font-weight:600; }
 
-/* ── STATS STRIP ── */
+/* ────────────────────────────────────────────
+   STATS
+──────────────────────────────────────────── */
 .stats-strip {
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  background:var(--cream);
-  display:flex; flex-wrap:wrap; justify-content:center;
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  background:var(--cream); display:flex; flex-wrap:wrap; justify-content:center;
 }
 .stat-item {
   padding:24px 0; text-align:center;
-  flex:1 1 25%; min-width:100px;
-  border-right:1px solid var(--border);
+  flex:1 1 25%; min-width:100px; border-right:1px solid var(--border);
 }
 .stat-item:last-child { border-right:none; }
 .stat-n {
@@ -220,9 +224,10 @@ nav {
   letter-spacing:-1.5px; color:var(--ink); line-height:1; margin-bottom:4px;
 }
 .stat-l { font-size:12px; color:var(--muted); }
-.stat-note { display:block; font-size:10.5px; color:var(--brown); margin-top:3px; font-weight:500; }
 
-/* ── PROCHAINE TABLE ── */
+/* ────────────────────────────────────────────
+   PROCHAINE TABLE
+──────────────────────────────────────────── */
 .section-next {
   background:var(--sage); padding:64px 24px;
   text-align:center; color:#fff;
@@ -232,11 +237,9 @@ nav {
   letter-spacing:-1px; margin-bottom:6px;
 }
 .next-sub { font-size:14px; opacity:.65; margin-bottom:36px; }
-
 .countdown-row {
-  display:inline-flex; flex-wrap:nowrap;
-  background:rgba(0,0,0,.18);
-  border:1px solid rgba(255,255,255,.12);
+  display:inline-flex;
+  background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.12);
   border-radius:10px; overflow:hidden; margin-bottom:36px;
 }
 .cd-block {
@@ -258,10 +261,11 @@ nav {
   background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18);
   border-radius:100px; padding:8px 20px;
   font-size:13px; font-weight:500; color:rgba(255,255,255,.85);
-  text-align:center; line-height:1.4;
 }
 
-/* ── TICKER ── */
+/* ────────────────────────────────────────────
+   TICKER
+──────────────────────────────────────────── */
 .ticker-wrap {
   overflow:hidden; background:var(--cream-2);
   border-top:1px solid var(--border); border-bottom:1px solid var(--border);
@@ -275,15 +279,18 @@ nav {
 }
 .tsep { width:4px; height:4px; border-radius:50%; background:var(--brown); opacity:.5; flex-shrink:0; }
 
-/* ── EYEBROW ── */
+/* ────────────────────────────────────────────
+   EYEBROW
+──────────────────────────────────────────── */
 .eyebrow {
   font-size:11px; font-weight:700; letter-spacing:.12em;
   text-transform:uppercase; color:var(--brown); display:block; margin-bottom:14px;
 }
 
-/* ── FEATURES ── */
+/* ────────────────────────────────────────────
+   FEATURES (POURQUOI)
+──────────────────────────────────────────── */
 .section-features { padding:80px 24px; max-width:1120px; margin:0 auto; }
-
 .features-header { max-width:560px; margin-bottom:52px; }
 .features-header h2 {
   font-weight:800; font-size:clamp(28px,5vw,42px);
@@ -293,7 +300,6 @@ nav {
   font-style:italic; font-family:var(--serif); font-weight:400; color:var(--brown);
 }
 .features-header p { font-size:16px; color:var(--muted); line-height:1.75; }
-
 .features-grid {
   display:grid; grid-template-columns:repeat(3,1fr);
   gap:1px; background:var(--border-2);
@@ -305,13 +311,14 @@ nav {
   font-size:11px; font-weight:700; letter-spacing:.10em;
   text-transform:uppercase; color:var(--brown); display:block; margin-bottom:10px;
 }
-.feat-card h3 { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:8px; letter-spacing:-.2px; }
+.feat-card h3 { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:8px; }
 .feat-card p { font-size:13.5px; color:var(--muted); line-height:1.65; }
 
-/* ── HOW ── */
+/* ────────────────────────────────────────────
+   HOW IT WORKS
+──────────────────────────────────────────── */
 .section-how {
-  padding:80px 24px;
-  background:var(--cream-2);
+  padding:80px 24px; background:var(--cream-2);
   border-top:1px solid var(--border); border-bottom:1px solid var(--border);
 }
 .section-how-inner { max-width:1120px; margin:0 auto; }
@@ -320,9 +327,7 @@ nav {
   font-weight:800; font-size:clamp(28px,5vw,42px);
   letter-spacing:-1.5px; line-height:1.08; color:var(--ink);
 }
-
 .how-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
-
 .how-steps { display:flex; flex-direction:column; }
 .how-step { display:flex; gap:18px; padding:18px 0; border-bottom:1px solid var(--border); }
 .how-step:first-child { border-top:1px solid var(--border); }
@@ -334,7 +339,6 @@ nav {
 }
 .step-body strong { display:block; font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px; }
 .step-body span { font-size:13.5px; color:var(--muted); line-height:1.55; }
-
 .how-visual {
   background:var(--parchment); border:1px solid var(--border-2);
   border-radius:12px; padding:24px; position:sticky; top:78px;
@@ -371,64 +375,74 @@ nav {
   padding-top:12px; border-top:1px solid var(--border); line-height:1.6;
 }
 
-/* ── CAROUSEL AVIS ── */
+/* ────────────────────────────────────────────
+   CAROUSEL AVIS — style original de cheznola.fr
+──────────────────────────────────────────── */
 .section-avis { background:var(--sage); padding:72px 0; }
 .section-avis-inner { max-width:1120px; margin:0 auto; padding:0 24px; }
 .section-avis h2 {
-  font-weight:800; font-size:clamp(26px,5vw,36px); letter-spacing:-1px;
-  color:#fff; margin-bottom:44px;
+  font-weight:800; font-size:clamp(26px,5vw,36px);
+  letter-spacing:-1px; color:#fff; margin-bottom:44px;
 }
 
-#nolaTestimonial { position:relative; width:100%; }
+#nolaTestimonial {
+  position:relative; width:100%; max-width:100%;
+  font-family:var(--sans);
+}
 #nolaTestimonial .nola-tc__inner {
-  display:grid; grid-auto-flow:column; grid-auto-columns:86%;
-  gap:14px; overflow-x:auto; overscroll-behavior-x:contain;
+  display:grid; grid-auto-flow:column; grid-auto-columns:88%;
+  gap:18px; overflow-x:auto; overscroll-behavior-x:contain;
   scroll-snap-type:x mandatory; scroll-behavior:smooth;
   -webkit-overflow-scrolling:touch;
-  padding:6px 56px 14px 2px;
+  padding:10px 64px 14px 6px;
 }
-#nolaTestimonial .nola-tc__inner::-webkit-scrollbar { height:5px; }
-#nolaTestimonial .nola-tc__inner::-webkit-scrollbar-thumb { background:rgba(255,255,255,.2); border-radius:999px; }
-#nolaTestimonial .nola-tc__inner::-webkit-scrollbar-track { background:rgba(255,255,255,.06); border-radius:999px; }
-@media(min-width:640px)  { #nolaTestimonial .nola-tc__inner { grid-auto-columns:calc(50% - 7px); } }
-@media(min-width:1024px) { #nolaTestimonial .nola-tc__inner { grid-auto-columns:calc(33.333% - 10px); } }
-@media(min-width:1280px) { #nolaTestimonial .nola-tc__inner { grid-auto-columns:calc(25% - 11px); } }
+#nolaTestimonial .nola-tc__inner::-webkit-scrollbar { height:8px; }
+#nolaTestimonial .nola-tc__inner::-webkit-scrollbar-thumb { background:rgba(0,0,0,.14); border-radius:999px; }
+#nolaTestimonial .nola-tc__inner::-webkit-scrollbar-track { background:rgba(255,255,255,.18); border-radius:999px; }
+@media(min-width:760px)  { #nolaTestimonial .nola-tc__inner { grid-auto-columns:calc(50% - 9px); } }
+@media(min-width:1024px) { #nolaTestimonial .nola-tc__inner { grid-auto-columns:calc(33.333% - 12px); } }
+@media(min-width:1280px) { #nolaTestimonial .nola-tc__inner { grid-auto-columns:calc(25% - 14px); } }
 
 #nolaTestimonial .nola-card {
-  scroll-snap-align:start; border-radius:12px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.15);
-  padding:22px 20px 20px;
+  scroll-snap-align:start; border-radius:22px;
+  background:#fff; border:1px solid rgba(0,0,0,.06);
+  box-shadow:0 10px 30px rgba(0,0,0,.08); padding:18px 18px 16px;
 }
-#nolaTestimonial .nola-head { display:flex; gap:11px; align-items:flex-start; margin-bottom:12px; }
-#nolaTestimonial .nola-avatarWrap { position:relative; width:42px; height:42px; flex:0 0 auto; }
-#nolaTestimonial .nola-avatar { width:42px; height:42px; border-radius:999px; object-fit:cover; display:block; }
+#nolaTestimonial .nola-head { display:flex; gap:12px; align-items:flex-start; margin-bottom:12px; }
+#nolaTestimonial .nola-avatarWrap { position:relative; width:48px; height:48px; flex:0 0 auto; }
+#nolaTestimonial .nola-avatar { width:48px; height:48px; border-radius:999px; object-fit:cover; display:block; border:1px solid rgba(0,0,0,.08); }
 #nolaTestimonial .nola-liBadge {
-  position:absolute; right:-3px; bottom:-3px;
-  width:17px; height:17px; border-radius:5px;
-  background:#fff; padding:1px; border:1.5px solid rgba(255,255,255,.9);
-  box-shadow:0 3px 8px rgba(0,0,0,.2);
+  position:absolute; right:-4px; bottom:-4px;
+  width:22px; height:22px; border-radius:6px;
+  background:#fff; padding:1.5px; border:2px solid rgba(255,255,255,.95);
+  box-shadow:0 6px 14px rgba(0,0,0,.18);
   display:flex; align-items:center; justify-content:center;
 }
 #nolaTestimonial .nola-liBadge img { width:100%; height:100%; object-fit:contain; display:block; }
-#nolaTestimonial .nola-meta { min-width:0; display:flex; flex-direction:column; gap:2px; }
-#nolaTestimonial .nola-nameRow { display:flex; align-items:center; gap:5px; }
-#nolaTestimonial .nola-name { font-weight:700; font-size:14px; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-#nolaTestimonial .nola-verified { width:13px; height:13px; border-radius:999px; object-fit:cover; flex:0 0 auto; }
-#nolaTestimonial .nola-role { font-size:12.5px; color:rgba(255,255,255,.5); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-#nolaTestimonial .nola-date { font-size:11.5px; color:rgba(255,255,255,.32); }
-#nolaTestimonial .nola-quote { margin:0; font-size:14px; color:rgba(255,255,255,.83); line-height:1.6; }
+#nolaTestimonial .nola-meta { min-width:0; display:flex; flex-direction:column; gap:3px; }
+#nolaTestimonial .nola-nameRow { display:flex; align-items:center; gap:6px; line-height:1.1; min-width:0; }
+#nolaTestimonial .nola-name { font-weight:600; font-size:16px; color:rgba(0,0,0,.88); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#nolaTestimonial .nola-verified { width:14px; height:14px; border-radius:999px; object-fit:cover; flex:0 0 auto; }
+#nolaTestimonial .nola-role { font-size:14px; color:rgba(0,0,0,.58); line-height:1.15; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#nolaTestimonial .nola-date { font-size:13px; color:rgba(0,0,0,.42); line-height:1.15; }
+#nolaTestimonial .nola-quote { margin:0; font-size:15px; color:rgba(0,0,0,.80); line-height:1.5; }
 #nolaTestimonial .nola-next {
-  position:absolute; top:50%; right:4px; transform:translateY(-50%);
-  width:40px; height:40px; border-radius:999px; border:0;
-  background:rgba(255,255,255,.22); color:#fff;
-  font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center;
-  backdrop-filter:blur(8px); z-index:5; transition:background .15s;
+  position:absolute; top:50%; right:8px; transform:translateY(-50%);
+  width:44px; height:44px; border-radius:999px; border:0;
+  background:rgba(0,0,0,.22); color:#fff;
+  font-size:22px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  backdrop-filter:blur(6px); z-index:5;
 }
-#nolaTestimonial .nola-next:hover { background:rgba(255,255,255,.32); }
-#nolaTestimonial .nola-next:disabled { opacity:.28; cursor:default; }
+#nolaTestimonial .nola-next:disabled { opacity:.35; cursor:default; }
+@media(max-width:420px) {
+  #nolaTestimonial .nola-quote { font-size:14px; }
+  #nolaTestimonial .nola-next { right:10px; width:42px; height:42px; }
+}
 
-/* ── NOLA ORIGINALS ── */
+/* ────────────────────────────────────────────
+   NOLA ORIGINALS
+──────────────────────────────────────────── */
 .section-originals {
   padding:80px 24px; max-width:760px; margin:0 auto; text-align:center;
 }
@@ -436,50 +450,50 @@ nav {
 .orig-header h2 {
   font-family:var(--playpen); font-weight:800;
   font-size:clamp(32px,6vw,52px);
-  color:var(--brown); letter-spacing:-0.5px; margin-bottom:14px; line-height:1.1;
+  color:var(--brown); margin-bottom:14px; line-height:1.1;
 }
-.orig-header .orig-lead-bold {
-  font-size:17px; font-weight:700; color:var(--ink); margin-bottom:6px;
-}
-.orig-header .orig-lead {
-  font-size:15px; color:var(--muted); line-height:1.7;
-}
-
+.orig-lead-bold { font-size:17px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+.orig-lead { font-size:15px; color:var(--muted); line-height:1.7; }
 .orig-price {
   display:inline-block;
   background:var(--cream-2); border:1px solid var(--border-2);
   border-radius:8px; padding:10px 28px; margin-bottom:28px;
   font-size:26px; font-weight:800; letter-spacing:-1px; color:var(--ink);
 }
-.orig-price span { font-size:14px; font-weight:400; color:var(--muted); letter-spacing:0; }
-
-.orig-feats { list-style:none; display:flex; flex-direction:column; gap:0; margin-bottom:20px; text-align:left; max-width:400px; margin-left:auto; margin-right:auto; }
+.orig-feats {
+  list-style:none; display:flex; flex-direction:column;
+  margin-bottom:20px; text-align:left;
+  max-width:400px; margin-left:auto; margin-right:auto;
+}
 .orig-feats li {
   display:flex; align-items:center; gap:12px;
-  font-size:15px; font-weight:500; color:var(--ink); padding:10px 0;
-  border-bottom:1px solid var(--border);
+  font-size:15px; font-weight:500; color:var(--ink);
+  padding:10px 0; border-bottom:1px solid var(--border);
 }
 .orig-feats li:last-child { border-bottom:none; }
 .orig-feats li::before { content:'✓'; color:var(--sage-bg); font-weight:800; font-size:14px; flex-shrink:0; }
-
 .orig-notes { margin-bottom:32px; }
 .orig-notes p {
   font-family:var(--serif); font-style:italic;
   font-size:14px; color:var(--muted-lt); line-height:1.65; margin-bottom:4px;
 }
 
-/* ── CONVERSATIONS ── */
+/* ────────────────────────────────────────────
+   CONVERSATIONS
+──────────────────────────────────────────── */
 .section-conv {
   background:var(--cream-2); padding:80px 24px;
   border-top:1px solid var(--border); border-bottom:1px solid var(--border);
 }
 .conv-inner { max-width:1120px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
 .conv-img {
-  width:100%; aspect-ratio:4/3;
+  width:100%; aspect-ratio:4/3; border-radius:8px;
   background:linear-gradient(160deg,#1e1a14 0%,#3d3428 100%);
-  border-radius:8px; display:flex; align-items:center; justify-content:center;
+  display:flex; align-items:center; justify-content:center;
   color:rgba(255,255,255,.15); font-size:11px; letter-spacing:.1em; font-weight:600; text-transform:uppercase;
+  overflow:hidden;
 }
+.conv-img img { width:100%; height:100%; object-fit:cover; display:block; }
 .conv-text h2 { font-weight:800; font-size:clamp(24px,4vw,34px); letter-spacing:-1.2px; color:var(--ink); margin-bottom:6px; line-height:1.1; }
 .conv-meta { font-size:11.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted-lt); display:block; margin-bottom:24px; }
 .conv-quotes { display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
@@ -490,7 +504,9 @@ nav {
 }
 .conv-note { font-size:12.5px; color:var(--muted-lt); line-height:1.65; }
 
-/* ── MID CTA ── */
+/* ────────────────────────────────────────────
+   MID CTA
+──────────────────────────────────────────── */
 .section-mid-cta {
   background:var(--brown); padding:80px 24px;
   text-align:center; color:#fff; position:relative; overflow:hidden;
@@ -504,20 +520,25 @@ nav {
 .mid-logo {
   font-family:var(--playpen); font-weight:800;
   font-size:clamp(40px,8vw,56px); display:block; margin-bottom:14px;
-  letter-spacing:-0.5px; color:rgba(255,255,255,.95);
+  color:rgba(255,255,255,.95);
 }
 .mid-desc { font-size:16px; opacity:.82; max-width:480px; margin:0 auto 8px; line-height:1.65; font-weight:300; }
 .mid-italic { font-family:var(--serif); font-style:italic; font-size:18px; opacity:.65; margin-bottom:44px; display:block; }
 .btn-white {
   display:inline-block; background:#fff; color:var(--brown-deep);
-  font-size:14px; font-weight:700; letter-spacing:.04em;
-  text-decoration:none; padding:13px 32px; border-radius:7px; transition:all .15s;
+  font-size:14px; font-weight:700; text-decoration:none;
+  padding:13px 32px; border-radius:7px; transition:all .15s;
 }
 .btn-white:hover { background:var(--cream); transform:translateY(-1px); }
 
-/* ── FAQ ── */
+/* ────────────────────────────────────────────
+   FAQ
+──────────────────────────────────────────── */
 .section-faq { padding:80px 24px 96px; max-width:680px; margin:0 auto; }
-.section-faq h2 { font-weight:800; font-size:clamp(28px,5vw,38px); letter-spacing:-1.2px; color:var(--ink); margin-bottom:48px; text-align:center; }
+.section-faq h2 {
+  font-weight:800; font-size:clamp(28px,5vw,38px);
+  letter-spacing:-1.2px; color:var(--ink); margin-bottom:48px; text-align:center;
+}
 .faq-item { border-bottom:1px solid var(--border); }
 .faq-item:first-of-type { border-top:1px solid var(--border); }
 .faq-q {
@@ -531,9 +552,13 @@ nav {
 .faq-icon { font-size:20px; color:var(--brown); font-weight:300; flex-shrink:0; transition:transform .2s; line-height:1; }
 .faq-item.open .faq-icon { transform:rotate(45deg); }
 .faq-a { display:none; font-size:14px; color:var(--muted); line-height:1.75; padding-bottom:20px; }
+.faq-a ul { padding-left:18px; margin-top:8px; }
+.faq-a li { margin-bottom:4px; }
 .faq-item.open .faq-a { display:block; }
 
-/* ── FOOTER DARK ── */
+/* ────────────────────────────────────────────
+   FOOTER DARK
+──────────────────────────────────────────── */
 .footer-dark { background:var(--dark); overflow:hidden; }
 .footer-hero {
   max-width:1120px; margin:0 auto; padding:88px 24px;
@@ -542,20 +567,22 @@ nav {
 .footer-hero-logo {
   font-family:var(--playpen); font-weight:800;
   font-size:clamp(44px,7vw,60px);
-  letter-spacing:-0.5px; color:var(--brown); display:block; margin-bottom:20px;
+  color:var(--brown); display:block; margin-bottom:20px;
 }
 .footer-hero h3 { font-size:clamp(22px,3.5vw,30px); font-weight:300; color:#fff; line-height:1.3; letter-spacing:-.3px; margin-bottom:12px; }
 .footer-hero h3 strong { font-weight:800; }
 .footer-hero p { font-size:14px; color:rgba(255,255,255,.35); margin-bottom:32px; line-height:1.65; }
 .footer-hero-img {
-  width:100%; aspect-ratio:4/3;
+  width:100%; aspect-ratio:4/3; border-radius:8px;
   background:linear-gradient(160deg,#15120e 0%,#2a2318 100%);
-  border-radius:8px; display:flex; align-items:center; justify-content:center;
+  display:flex; align-items:center; justify-content:center;
   color:rgba(255,255,255,.1); font-size:11px; letter-spacing:.1em; font-weight:600; text-transform:uppercase;
+  overflow:hidden;
 }
+.footer-hero-img img { width:100%; height:100%; object-fit:cover; display:block; }
 .footer-bar {
-  border-top:1px solid rgba(255,255,255,.07);
-  padding:24px; max-width:1120px; margin:0 auto;
+  border-top:1px solid rgba(255,255,255,.07); padding:24px;
+  max-width:1120px; margin:0 auto;
   display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
 }
 .footer-bar-logo { font-family:var(--playpen); font-weight:800; font-size:18px; color:var(--brown); }
@@ -564,15 +591,16 @@ nav {
 .footer-links a:hover { color:rgba(255,255,255,.6); }
 .footer-copy { font-size:12px; color:rgba(255,255,255,.2); }
 
-/* ── RESPONSIVE MOBILE ── */
-@media (max-width:768px) {
+/* ────────────────────────────────────────────
+   RESPONSIVE MOBILE
+──────────────────────────────────────────── */
+@media(max-width:768px) {
   nav { padding:0 16px; height:54px; }
   .nav-links { display:none; }
   .nav-logo { font-size:20px; }
   .nav-cta { font-size:12px; padding:7px 14px; }
 
   .hero { padding:100px 16px 72px; }
-  .hero-badge { font-size:11px; padding:4px 12px; }
 
   .stats-strip { flex-wrap:wrap; }
   .stat-item { flex:1 1 50%; border-right:none; border-bottom:1px solid var(--border); }
@@ -583,7 +611,6 @@ nav {
   .countdown-row { width:100%; }
   .cd-block { flex:1; padding:16px 8px; min-width:0; }
   .cd-n { font-size:32px; letter-spacing:-1.5px; }
-  .spots-pill { font-size:12px; padding:7px 14px; }
 
   .features-grid { grid-template-columns:1fr; }
   .feat-card { border-bottom:1px solid var(--border-2); }
@@ -598,17 +625,16 @@ nav {
   .conv-img { aspect-ratio:16/9; }
 
   .section-mid-cta { padding:64px 16px; }
-
   .section-faq { padding:64px 16px 80px; }
   .faq-q { font-size:14px; }
 
   .footer-hero { grid-template-columns:1fr; padding:64px 16px; }
   .footer-hero-img { display:none; }
   .footer-bar { flex-direction:column; text-align:center; padding:20px 16px; }
-  .footer-links { justify-content:center; gap:16px; }
+  .footer-links { justify-content:center; }
 }
 
-@media (max-width:400px) {
+@media(max-width:400px) {
   .hero-wordmark { font-size:56px; }
   .cd-n { font-size:28px; }
   .cd-block { padding:14px 6px; }
@@ -619,18 +645,18 @@ nav {
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ── -->
 <nav>
-  <a href="#" class="nav-logo">Nola</a>
+  <a href="/" class="nav-logo">Nola</a>
   <ul class="nav-links">
     <li><a href="#how">Comment ça marche</a></li>
     <li><a href="#avis">Avis</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="#" class="nav-cta">Être prévenu·e →</a>
+  <a href="https://cheznola.fillout.com/booking" class="nav-cta" target="_blank" rel="noopener">Être prévenu·e →</a>
 </nav>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-badge fu d1">
     <span class="ldot"></span>
@@ -647,7 +673,7 @@ nav {
   <p class="hero-sub fu d4">1x/mois. En petit comité.</p>
   <div class="asso-pill fu d4">Association loi 1901 · Paris</div>
   <div class="hero-actions fu d5">
-    <a href="#" class="btn-primary">Être prévenu·e →</a>
+    <a href="https://cheznola.fillout.com/booking" class="btn-primary" target="_blank" rel="noopener">Être prévenu·e →</a>
     <a href="#how" class="btn-ghost-warm">Comment ça marche</a>
   </div>
   <div class="hero-proof fu d5">
@@ -659,27 +685,15 @@ nav {
   </div>
 </section>
 
-<!-- STATS -->
+<!-- ── STATS ── -->
 <div class="stats-strip">
-  <div class="stat-item">
-    <span class="stat-n">1</span>
-    <span class="stat-l">Édition mensuelle</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-n">150+</span>
-    <span class="stat-l">Membres</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-n">4</span>
-    <span class="stat-l">Tables par édition</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-n">4-6</span>
-    <span class="stat-l">Par table</span>
-  </div>
+  <div class="stat-item"><span class="stat-n">1</span><span class="stat-l">Édition mensuelle</span></div>
+  <div class="stat-item"><span class="stat-n">150+</span><span class="stat-l">Membres</span></div>
+  <div class="stat-item"><span class="stat-n">4</span><span class="stat-l">Tables par édition</span></div>
+  <div class="stat-item"><span class="stat-n">4–6</span><span class="stat-l">Par table</span></div>
 </div>
 
-<!-- PROCHAINE TABLE -->
+<!-- ── PROCHAINE TABLE ── -->
 <section class="section-next" id="next">
   <h2>Prochaine table</h2>
   <p class="next-sub">4 tables ce soir-là.</p>
@@ -693,7 +707,7 @@ nav {
   <div class="spots-pill">Le 2ᵉ mardi de chaque mois</div>
 </section>
 
-<!-- TICKER -->
+<!-- ── TICKER ── -->
 <div class="ticker-wrap">
   <div class="ticker-inner">
     <div class="ticker-item">PM<span class="tsep"></span>Designer<span class="tsep"></span>CTO<span class="tsep"></span>Data<span class="tsep"></span>Tech Lead<span class="tsep"></span>Head of Product<span class="tsep"></span>CPO<span class="tsep"></span>PO<span class="tsep"></span>Engineering Manager<span class="tsep"></span>Founder<span class="tsep"></span>Sales<span class="tsep"></span>Builders</div>
@@ -701,7 +715,7 @@ nav {
   </div>
 </div>
 
-<!-- POURQUOI -->
+<!-- ── POURQUOI ── -->
 <section class="section-features" id="why">
   <div class="features-header">
     <span class="eyebrow">Pourquoi Nola</span>
@@ -727,7 +741,7 @@ nav {
   </div>
 </section>
 
-<!-- COMMENT ÇA SE PASSE -->
+<!-- ── COMMENT ÇA SE PASSE ── -->
 <section class="section-how" id="how">
   <div class="section-how-inner">
     <div class="how-header">
@@ -746,13 +760,13 @@ nav {
         </div>
         <div class="how-step">
           <div class="step-num">03</div>
-          <div class="step-body"><strong>Tu reçois les infos</strong><span>Le lieu, l'heure - on s’occupe du reste</span></div>
+          <div class="step-body"><strong>Tu reçois les infos</strong><span>Le lieu, l'heure — on s'occupe du reste</span></div>
         </div>
         <div class="how-step">
           <div class="step-num">04</div>
-          <div class="step-body"><strong>Tu vis l'expérience</strong><span>Des échanges sincères, autour d’un bon dîner.</span></div>
+          <div class="step-body"><strong>Tu vis l'expérience</strong><span>Des échanges sincères, autour d'un bon dîner.</span></div>
         </div>
-        <a href="#" class="btn-primary" style="margin-top:28px;display:inline-flex;">Être prévenu·e →</a>
+        <a href="https://cheznola.fillout.com/booking" class="btn-primary" style="margin-top:28px;display:inline-flex;" target="_blank" rel="noopener">Être prévenu·e →</a>
       </div>
       <div class="how-visual">
         <div class="hv-header">
@@ -795,7 +809,7 @@ nav {
   </div>
 </section>
 
-<!-- CAROUSEL AVIS -->
+<!-- ── CAROUSEL AVIS ── -->
 <section class="section-avis" id="avis">
   <div class="section-avis-inner">
     <span class="eyebrow" style="color:rgba(255,255,255,.5);">Les premiers retours</span>
@@ -807,7 +821,7 @@ nav {
   </div>
 </section>
 
-<!-- NOLA ORIGINALS -->
+<!-- ── NOLA ORIGINALS ── -->
 <section class="section-originals" id="originals">
   <div class="orig-header">
     <span class="eyebrow">Format Originals</span>
@@ -815,92 +829,124 @@ nav {
     <p class="orig-lead-bold">4 tables simultanées. Une fois par mois.</p>
     <p class="orig-lead">Jamais la même table. Jamais le même resto.</p>
   </div>
-
   <div class="orig-price">10€</div>
-
   <ul class="orig-feats">
     <li>Accès à un dîner Nola</li>
     <li>Conversations libres</li>
     <li>Paiement à l'unité, sans engagement</li>
     <li>4–6 pros par table, profils équilibrés</li>
   </ul>
-
   <div class="orig-notes">
     <p>Le dîner se règle au restaurant.</p>
     <p>Adhésion à l'association incluse dès la 1ère participation.</p>
   </div>
-
-  <a href="#" class="btn-primary" style="font-size:15px; padding:14px 36px;">Essayer →</a>
+  <a href="https://cheznola.fillout.com/booking" class="btn-primary" style="font-size:15px;padding:14px 36px;" target="_blank" rel="noopener">Essayer →</a>
 </section>
 
-<!-- CONVERSATIONS -->
+<!-- ── CONVERSATIONS ── -->
 <section class="section-conv" id="conv">
   <div class="conv-inner">
-    <div class="conv-img">Photo</div>
+    <div class="conv-img">
+      <!-- <img src="/images/nola-table.jpg" alt="Une table Nola"> -->
+      Photo
+    </div>
     <div class="conv-text">
       <span class="eyebrow">Les conversations</span>
       <h2>Ce qu'on dit à table</h2>
       <span class="conv-meta">En vrai</span>
       <div class="conv-quotes">
-        <div class="conv-q">« L’IA me fait produire plus, mais réfléchir moins.»</div>
-        <div class="conv-q">« Être first PM est beaucoup plus politique que produit.</div>
-        <div class="conv-q">« Manager ou revenir au build ?»</div>
-        <div class="conv-q">« Lancer un produit de zéro..»</div>
+        <div class="conv-q">« L'IA me fait produire plus, mais réfléchir moins. »</div>
+        <div class="conv-q">« Être first PM est beaucoup plus politique que produit. »</div>
+        <div class="conv-q">« Manager ou revenir au build ? »</div>
+        <div class="conv-q">« Lancer un produit de zéro... »</div>
       </div>
       <p class="conv-note">Pas de style. Pas de slide.<br>Juste des conversations entre pairs.</p>
-      <a href="#" class="btn-primary" style="margin-top:24px;display:inline-flex;">Suivre Nola →</a>
+      <a href="https://cheznola.fillout.com/booking" class="btn-primary" style="margin-top:24px;display:inline-flex;" target="_blank" rel="noopener">Suivre Nola →</a>
     </div>
   </div>
 </section>
 
-<!-- MID CTA -->
+<!-- ── MID CTA ── -->
 <section class="section-mid-cta">
   <span class="mid-logo">Nola.</span>
   <p class="mid-desc">Déjà +150 Product People curieux de tester à Paris.</p>
   <p class="mid-desc">PM, CPO, Designers, Data… toutes les tables sont différentes.</p>
-  <span class="mid-italic">👉 Et toi, tu rejoins laquelle ?</span>
-  <a href="#" class="btn-white">Devenir membre →</a>
+  <span class="mid-italic">Et toi, tu rejoins laquelle ?</span>
+  <a href="https://cheznola.fillout.com/booking" class="btn-white" target="_blank" rel="noopener">Devenir membre →</a>
 </section>
 
-<!-- FAQ -->
+<!-- ── FAQ ── -->
 <section class="section-faq" id="faq">
   <h2>FAQ...</h2>
-  <div class="faq-item"><button class="faq-q">Qui peut rejoindre Nola ?<span class="faq-icon">+</span></button><div class="faq-a">Aujourd’hui, Nola s’adresse aux Product People : CPO, Lead/Head, PM/PO, Ops, et Product Designers/Tech orientés produit.</div></div>
-  <div class="faq-item"><button class="faq-q">Nola, c'est quoi exactement ?<span class="faq-icon">+</span></button><div class="faq-a">Nola est une association loi 1901. On se retrouve autour de dîners en petit comité. La participation sert à couvrir l’organisation. Le repas est réglé directement au restaurant.</div></div>
-  <div class="faq-item"><button class="faq-q">Comment devenir membre ?<span class="faq-icon">+</span></button><div class="faq-a">L’inscription est gratuite : il suffit de remplir le formulaire pour être alerté·e des dîners à venir. Ensuite, si tu veux participer une première fois, tu règles ton premier billet : l’adhésion est alors activée et offerte la première année.</div></div>
-  <div class="faq-item"><button class="faq-q">Est-ce que c'est régulier ?<span class="faq-icon">+</span></button><div class="faq-a">Un dîner par mois, à Paris. Le 2ᵉ mardi de chaque mois.</div></div>
-  <div class="faq-item"><button class="faq-q">Annulation : que se passe-t-il si je ne peux plus venir ?<span class="faq-icon">+</span></button><div class="faq-a">On ne rembourse pas. Si tu ne peux plus venir, ta place est reportée sur le dîner suivant (dans la limite des places disponibles). Pour qu’on gère ça proprement, préviens-nous dès que possible.</div></div>
-  <div class="faq-item"><button class="faq-q">Combien ça coûte ?<span class="faq-icon">+</span></button><div class="faq-a"><ul><li><strong>Participation :</strong> 10&nbsp;€ <em>(organisation)</em></li><li><strong>Repas :</strong> chacun règle son addition au restaurant</li></ul></div></div>
-  <div class="faq-item"><button class="faq-q">Comment sont composées les tables ?<span class="faq-icon">+</span></button><div class="faq-a">Par sélection humaine : profils proches, niveaux complémentaires, diversité de contextes. L’objectif : des échanges sincères et équilibrés.</div></div>
-  <div class="faq-item"><button class="faq-q">Quand reçoit-on l’adresse du restaurant ?<span class="faq-icon">+</span></button><div class="faq-a">L’adresse exacte est envoyée 3 à 5 jours avant par email, puis rappelée la veille.</div></div>
-  <div class="faq-item"><button class="faq-q">Puis-je venir seul·e ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. La majorité des participant·es viennent seul·es. Les tables sont pensées pour que la conversation démarre naturellement.</div></div>
+  <div class="faq-item">
+    <button class="faq-q">Qui peut rejoindre Nola ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">Aujourd'hui, Nola s'adresse aux Product People : CPO, Lead/Head, PM/PO, Ops, et Product Designers/Tech orientés produit.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Nola, c'est quoi exactement ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">Nola est une association loi 1901. On se retrouve autour de dîners en petit comité. La participation sert à couvrir l'organisation. Le repas est réglé directement au restaurant.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Comment devenir membre ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">L'inscription est gratuite : il suffit de remplir le formulaire pour être alerté·e des dîners à venir. Ensuite, si tu veux participer une première fois, tu règles ton premier billet : l'adhésion est alors activée et offerte la première année.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Est-ce que c'est régulier ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">Un dîner par mois, à Paris. Le 2ᵉ mardi de chaque mois.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Annulation : que se passe-t-il si je ne peux plus venir ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">On ne rembourse pas. Si tu ne peux plus venir, ta place est reportée sur le dîner suivant (dans la limite des places disponibles). Pour qu'on gère ça proprement, préviens-nous dès que possible.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Combien ça coûte ?<span class="faq-icon">+</span></button>
+    <div class="faq-a"><ul><li><strong>Participation :</strong> 10&nbsp;€ <em>(organisation)</em></li><li><strong>Repas :</strong> chacun règle son addition au restaurant</li></ul></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Comment sont composées les tables ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">Par sélection humaine : profils proches, niveaux complémentaires, diversité de contextes. L'objectif : des échanges sincères et équilibrés.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Quand reçoit-on l'adresse du restaurant ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">L'adresse exacte est envoyée 3 à 5 jours avant par email, puis rappelée la veille.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Puis-je venir seul·e ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">Oui. La majorité des participant·es viennent seul·es. Les tables sont pensées pour que la conversation démarre naturellement.</div>
+  </div>
 </section>
 
-<!-- FOOTER DARK -->
+<!-- ── FOOTER ── -->
 <div class="footer-dark">
   <div class="footer-hero">
     <div>
       <span class="footer-hero-logo">Nola.</span>
       <h3>On ne s'inscrit pas.<br><strong>On y est invité.</strong></h3>
       <p>Parce que les meilleures idées naissent...<br>...rarement derrière un écran.</p>
-      <a href="#" class="btn-primary">Être prévenu·e →</a>
+      <a href="https://cheznola.fillout.com/booking" class="btn-primary" target="_blank" rel="noopener">Être prévenu·e →</a>
     </div>
-    <div class="footer-hero-img">Photo</div>
+    <div class="footer-hero-img">
+      <!-- <img src="/images/nola-ambiance.jpg" alt="Ambiance Nola"> -->
+      Photo
+    </div>
   </div>
   <div class="footer-bar">
     <span class="footer-bar-logo">Nola.</span>
     <ul class="footer-links">
-      <li><a href="#">CGU</a></li>
-      <li><a href="#">Confidentialité</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Association loi 1901</a></li>
+      <li><a href="/cgu">CGU</a></li>
+      <li><a href="/confidentialite">Confidentialité</a></li>
+      <li><a href="mailto:hello@cheznola.fr">Contact</a></li>
+      <li><a href="https://cheznola.fillout.com/booking" target="_blank" rel="noopener">Rejoindre</a></li>
     </ul>
-    <span class="footer-copy">© 2025 Nola · cheznola.fr</span>
+    <span class="footer-copy">© 2025 Nola · Association loi 1901 · cheznola.fr</span>
   </div>
 </div>
 
+<!-- ────────────────────────────────────────────
+   SCRIPTS
+──────────────────────────────────────────── -->
 <script>
-// FAQ
+/* FAQ */
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
@@ -910,28 +956,36 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// Countdown
-function tick() {
+/* Countdown — cible le prochain 2ᵉ mardi du mois à 19h30 */
+function getNextTarget() {
   const now = new Date();
-  const target = new Date(now);
-  target.setDate(target.getDate() + 4);
-  target.setHours(20, 0, 0, 0);
-  const diff = Math.max(0, target - now);
+  const d = new Date(now.getFullYear(), now.getMonth(), 1);
+  let count = 0;
+  while (count < 2) { if (d.getDay() === 2) count++; if (count < 2) d.setDate(d.getDate() + 1); }
+  d.setHours(19, 30, 0, 0);
+  if (d <= now) {
+    const next = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+    let c = 0;
+    while (c < 2) { if (next.getDay() === 2) c++; if (c < 2) next.setDate(next.getDate() + 1); }
+    next.setHours(19, 30, 0, 0);
+    return next;
+  }
+  return d;
+}
+function tick() {
+  const diff = Math.max(0, getNextTarget() - new Date());
   const pad = n => String(Math.floor(n)).padStart(2,'0');
-  document.getElementById('cd-d').textContent = pad(diff/86400000);
-  document.getElementById('cd-h').textContent = pad((diff%86400000)/3600000);
-  document.getElementById('cd-m').textContent = pad((diff%3600000)/60000);
-  document.getElementById('cd-s').textContent = pad((diff%60000)/1000);
+  document.getElementById('cd-d').textContent = pad(diff / 86400000);
+  document.getElementById('cd-h').textContent = pad((diff % 86400000) / 3600000);
+  document.getElementById('cd-m').textContent = pad((diff % 3600000) / 60000);
+  document.getElementById('cd-s').textContent = pad((diff % 60000) / 1000);
 }
 tick(); setInterval(tick, 1000);
 
-// Scroll reveal
+/* Scroll reveal */
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-    }
+    if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }
   });
 }, { threshold: 0.06 });
 document.querySelectorAll('.section-features, .section-how-inner, .section-originals, .conv-inner, .section-faq').forEach(el => {
@@ -939,64 +993,59 @@ document.querySelectorAll('.section-features, .section-how-inner, .section-origi
   io.observe(el);
 });
 
-// CAROUSEL
-(function(){
-  const root = document.getElementById('nolaTestimonial');
+/* Carousel */
+(function () {
+  const root    = document.getElementById('nolaTestimonial');
   if (!root) return;
-  const track = root.querySelector('.nola-tc__inner');
+  const track   = root.querySelector('.nola-tc__inner');
   const nextBtn = root.querySelector('.nola-next');
 
-  const AVATAR   = "https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707220/Nola._2_kh6us9.png";
-  const LINKEDIN = "https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707210/LinkedIn_logo_initials_i5mnfq.png";
-  const VERIFIED = "https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707210/instagram-verification-badge_htnu2v.jpg";
+  const AVATAR   = 'https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707220/Nola._2_kh6us9.png';
+  const LINKEDIN = 'https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707210/LinkedIn_logo_initials_i5mnfq.png';
+  const VERIFIED = 'https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707210/instagram-verification-badge_htnu2v.jpg';
 
   const REVIEWS = [
-    { text:"Merci encore pour le dîner, c'était très cool !! Très bon concept. Avec plaisir pour en faire un autre.", name:"Robin", role:"Product Builder", date:"20 novembre" },
-    { text:"Le cadre aide vraiment à sortir des échanges de surface. C'était top !", name:"Alexandra", role:"Head of Product", date:"il y a 2 jours" },
-    { text:"Hello Manu ! Encore merci pour hier, c'était vraiment très sympa !!", name:"Mehdi", role:"Product Director", date:"il y a 2 jours" },
-    { text:"On sort des discours de façade, et ça fait du bien.", name:"Alix", role:"Product Designer", date:"il y a 2 jours" },
-    { text:"J'ai trouvé sympa de ne pas parler de son poste mais plutôt de ce qu'on vit vraiment dans son taf !", name:"Caroline", role:"PMM", date:"il y a 2 jours" },
-    { text:"Yes, j'ai trouvé les échanges sincères, loin des codes habituels du networking. Motivée pour le prochain.", name:"Chloé", role:"Tech Lead", date:"20 novembre" },
-    { text:"Pour moi, c'était pas un event. J'ai vite senti que ce n'est pas le même registre. Et ça fait du bien p******..", name:"Gabriel", role:"Senior Product Manager", date:"il y a 2 jours" },
-    { text:"La table était bien équilibrée. Je pense que j'ai créé plus de liens de qualité qu'en des années.", name:"Romain", role:"Product Manager", date:"9 décembre 2025" }
+    { name:'Robin',     role:'Product Builder',      date:'20 novembre',      text:'Merci encore pour le dîner, c\'était très cool !! Très bon concept. Avec plaisir pour en faire un autre.' },
+    { name:'Alexandra', role:'Head of Product',      date:'il y a 2 jours',   text:'Le cadre aide vraiment à sortir des échanges de surface. C\'était top !' },
+    { name:'Mehdi',     role:'Product Director',     date:'il y a 2 jours',   text:'Hello Manu ! Encore merci pour hier, c\'était vraiment très sympa !!' },
+    { name:'Alix',      role:'Product Designer',     date:'il y a 2 jours',   text:'On sort des discours de façade, et ça fait du bien.' },
+    { name:'Caroline',  role:'PMM',                  date:'il y a 2 jours',   text:'J\'ai trouvé sympa de ne pas parler de son poste mais plutôt de ce qu\'on vit vraiment dans son taf !' },
+    { name:'Chloé',     role:'Tech Lead',            date:'20 novembre',      text:'Yes, j\'ai trouvé les échanges sincères, loin des codes habituels du networking. Motivée pour le prochain.' },
+    { name:'Gabriel',   role:'Senior Product Manager',date:'il y a 2 jours',  text:'Pour moi, c\'était pas un event. J\'ai vite senti que ce n\'est pas le même registre. Et ça fait du bien p******..' },
+    { name:'Romain',    role:'Product Manager',      date:'9 décembre 2025',  text:'La table était bien équilibrée. Je pense que j\'ai créé plus de liens de qualité qu\'en des années.' }
   ];
 
   function esc(s) {
-    return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    return String(s).replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
   }
 
   track.innerHTML = REVIEWS.map(r => `
     <article class="nola-card">
       <div class="nola-head">
         <div class="nola-avatarWrap">
-          <img class="nola-avatar" src="${AVATAR}" alt="">
-          <span class="nola-liBadge" aria-hidden="true"><img src="${LINKEDIN}" alt=""></span>
+          <img class="nola-avatar" src="${AVATAR}" alt="${esc(r.name)}">
+          <span class="nola-liBadge" aria-hidden="true"><img src="${LINKEDIN}" alt="LinkedIn"></span>
         </div>
         <div class="nola-meta">
           <div class="nola-nameRow">
             <span class="nola-name">${esc(r.name)}</span>
-            <img class="nola-verified" src="${VERIFIED}" alt="">
+            <img class="nola-verified" src="${VERIFIED}" alt="Vérifié">
           </div>
           <div class="nola-role">${esc(r.role)}</div>
           <div class="nola-date">${esc(r.date)}</div>
         </div>
       </div>
       <p class="nola-quote">${esc(r.text)}</p>
-    </article>
-  `).join('');
+    </article>`).join('');
 
-  function getStep() {
+  function step() {
     const first = track.firstElementChild;
-    if (!first) return 0;
-    return first.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 0);
+    return first ? first.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 0) : 0;
   }
   function updateBtn() {
     nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
   }
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: getStep(), behavior:'smooth' });
-    setTimeout(updateBtn, 280);
-  });
+  nextBtn.addEventListener('click', () => { track.scrollBy({ left: step(), behavior: 'smooth' }); setTimeout(updateBtn, 260); });
   track.addEventListener('scroll', () => requestAnimationFrame(updateBtn));
   window.addEventListener('resize', updateBtn);
   updateBtn();
