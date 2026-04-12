@@ -9,6 +9,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- ── FAVICON ── -->
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1766328298/Nola._3_ebrl57.png">
+
 <!-- ── METAS SEO ── -->
 <title>Nola — Des rencontres qui comptent, entre Product People.</title>
 <meta name="description" content="Des dîners en petit comité entre Product People. Pour prendre le temps d'échanger vraiment et (re)construire son cercle pro, autrement.">
@@ -20,7 +23,7 @@
 <meta property="og:url" content="https://cheznola.fr">
 <meta property="og:title" content="Nola — Des rencontres qui comptent, entre Product People.">
 <meta property="og:description" content="Des tables entre curieux, bienveillants et ambitieux. Pour échanger, s'inspirer et (re)bâtir des liens pro, durablement.">
-<meta property="og:image" content="https://cheznola.fr/images/nola-preview-v2.jpg">
+<meta property="og:image" content="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1766328298/Nola._3_ebrl57.png">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Nola">
 
@@ -28,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nola — Des rencontres qui comptent, entre Product People.">
 <meta name="twitter:description" content="Des dîners en petit comité entre Product People. Pour prendre le temps d'échanger vraiment et (re)construire son cercle pro, autrement.">
-<meta name="twitter:image" content="https://cheznola.fr/images/nola-preview-v2.jpg">
+<meta name="twitter:image" content="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1766328298/Nola._3_ebrl57.png">
 
 <!-- ── GOOGLE ANALYTICS GA4 ── -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNMLB94J4R"></script>
@@ -318,7 +321,8 @@ nav {
 
 /* ── FEATURES ── */
 .section-features { padding:80px 24px; max-width:1120px; margin:0 auto; }
-.features-header { max-width:560px; margin-bottom:52px; }
+.features-inner { display:grid; grid-template-columns:1fr 380px; gap:64px; align-items:start; }
+.features-header { margin-bottom:40px; }
 .features-header h2 { font-weight:800; font-size:clamp(28px,5vw,42px); letter-spacing:-1.5px; line-height:1.08; margin-bottom:14px; color:var(--ink); }
 .features-header h2 em { font-style:italic; font-family:var(--serif); font-weight:400; color:var(--brown); }
 .features-header p { font-size:16px; color:var(--muted); line-height:1.75; }
@@ -328,6 +332,8 @@ nav {
 .feat-label { font-size:11px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--brown); display:block; margin-bottom:10px; }
 .feat-card h3 { font-size:15px; font-weight:700; color:var(--ink); margin-bottom:8px; }
 .feat-card p { font-size:13.5px; color:var(--muted); line-height:1.65; }
+.features-photo { width:100%; aspect-ratio:3/4; border-radius:10px; overflow:hidden; position:sticky; top:78px; }
+.features-photo img { width:100%; height:100%; object-fit:cover; display:block; }
 
 /* ── HOW ── */
 .section-how { padding:80px 24px; background:var(--cream-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -502,12 +508,14 @@ nav {
   .cd-block { flex:1; padding:16px 8px; min-width:0; }
   .cd-n { font-size:32px; letter-spacing:-1.5px; }
 
-  .features-grid { grid-template-columns:1fr; }
   .feat-card { border-bottom:1px solid var(--border-2); }
   .feat-card:last-child { border-bottom:none; }
 
   .how-grid { grid-template-columns:1fr; gap:40px; }
   .how-visual { position:static; }
+
+  .features-inner { grid-template-columns:1fr; }
+  .features-photo { aspect-ratio:4/3; position:static; }
 
   /* Carousel mobile : 1 carte */
   .avis-card { flex:0 0 100%; }
@@ -633,26 +641,33 @@ nav {
 
 <!-- ── POURQUOI ── -->
 <section class="section-features" id="why">
-  <div class="features-header">
-    <span class="eyebrow">Pourquoi Nola</span>
-    <h2>On se croise souvent.<br>On se rencontre <em>rarement.</em></h2>
-    <p>Nola recrée un espace plus humain pour (re)bâtir des liens pro, durablement.</p>
-  </div>
-  <div class="features-grid">
-    <div class="feat-card">
-      <span class="feat-label">01</span>
-      <h3>De vrais liens</h3>
-      <p>Moins de bruit, plus d'échanges sincères.</p>
+  <div class="features-inner">
+    <div class="features-left">
+      <div class="features-header">
+        <span class="eyebrow">Pourquoi Nola</span>
+        <h2>On se croise souvent.<br>On se rencontre <em>rarement.</em></h2>
+        <p>Nola recrée un espace plus humain pour (re)bâtir des liens pro, durablement.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feat-card">
+          <span class="feat-label">01</span>
+          <h3>De vrais liens</h3>
+          <p>Moins de bruit, plus d'échanges sincères.</p>
+        </div>
+        <div class="feat-card">
+          <span class="feat-label">02</span>
+          <h3>Des tables choisies</h3>
+          <p>Selon les affinités, les rôles et les intentions.</p>
+        </div>
+        <div class="feat-card">
+          <span class="feat-label">03</span>
+          <h3>Une expérience simple</h3>
+          <p>Un dîner, une conversation, un lien qui reste.</p>
+        </div>
+      </div>
     </div>
-    <div class="feat-card">
-      <span class="feat-label">02</span>
-      <h3>Des tables choisies</h3>
-      <p>Selon les affinités, les rôles et les intentions.</p>
-    </div>
-    <div class="feat-card">
-      <span class="feat-label">03</span>
-      <h3>Une expérience simple</h3>
-      <p>Un dîner, une conversation, un lien qui reste.</p>
+    <div class="features-photo">
+      <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1775983405/Nola_ambiance3_cgqi4e.png" alt="Ambiance Nola">
     </div>
   </div>
 </section>
