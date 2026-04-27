@@ -129,6 +129,22 @@ nav {
 .nav-soon { display:flex; align-items:center; gap:5px; font-size:13px; color:var(--muted-lt); }
 .nav-soon-badge { font-size:10px; font-weight:700; letter-spacing:.05em; background:var(--brown-pale); color:var(--brown-deep); border-radius:100px; padding:2px 8px; }
 .nav-right { display:flex; align-items:center; gap:10px; }
+
+/* ── NAV MEMBRE BUTTON (NOUVEAU) ── */
+.nav-membre {
+  font-size:13px;
+  font-weight:700;
+  color:#fff;
+  background:var(--brown);
+  border:none;
+  border-radius:6px;
+  padding:8px 20px;
+  text-decoration:none;
+  transition:background .15s, transform .12s;
+  white-space:nowrap;
+}
+.nav-membre:hover { background:var(--brown-deep); transform:translateY(-1px); }
+
 .nav-cta { font-size:13px; font-weight:700; color:var(--parchment); background:var(--dark); border:none; border-radius:6px; padding:8px 20px; text-decoration:none; transition:background .15s, transform .12s; white-space:nowrap; }
 .nav-cta:hover { background:var(--dark-2); transform:translateY(-1px); }
 
@@ -151,6 +167,15 @@ nav {
 .mobile-menu a:last-of-type { border-bottom:none; }
 .mobile-menu a:hover { color:var(--brown); }
 .m-soon { font-size:10px; font-weight:700; letter-spacing:.05em; background:var(--brown-pale); color:var(--brown-deep); border-radius:100px; padding:2px 8px; }
+
+/* ── MOBILE MENU MEMBRE (NOUVEAU) ── */
+.mobile-menu a.mobile-membre {
+  color:var(--muted);
+  font-weight:400;
+  font-size:14px;
+}
+.mobile-menu a.mobile-membre:hover { color:var(--ink); }
+
 .mobile-cta { display:block; text-align:center !important; background:var(--brown) !important; color:#fff !important; border-radius:7px; margin-top:14px; font-size:15px !important; font-weight:700 !important; padding:14px 0 !important; border-bottom:none !important; justify-content:center !important; }
 .mobile-cta:hover { background:var(--brown-deep) !important; }
 
@@ -351,6 +376,13 @@ nav {
 .footer-share-btn { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; text-decoration:none; padding:6px 12px; border-radius:5px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.55); cursor:pointer; transition:all .15s; white-space:nowrap; font-family:var(--sans); }
 .footer-share-btn:hover { background:rgba(255,255,255,.14); color:rgba(255,255,255,.85); }
 
+/* ── FOOTER MEMBRE LINK (NOUVEAU) ── */
+.footer-links a.footer-membre {
+  color:rgba(255,255,255,.45);
+  font-weight:500;
+}
+.footer-links a.footer-membre:hover { color:rgba(255,255,255,.75); }
+
 /* ────────────────────────────────────────────
    TABLET (769–1023px) — 2 cartes carousel
 ──────────────────────────────────────────── */
@@ -369,6 +401,8 @@ nav {
   .nav-logo { font-size:20px; }
   .nav-cta { font-size:12px; padding:7px 14px; }
   .burger { display:flex; }
+  /* Cacher le lien membre desktop sur mobile — géré dans le burger */
+  .nav-membre { display:none; }
 
   /* HERO */
   .hero { padding:100px 16px 72px; }
@@ -445,6 +479,8 @@ nav {
     </li>
   </ul>
   <div class="nav-right">
+    <!-- NOUVEAU : bouton espace membre orange, avant le CTA -->
+    <a href="https://app.cheznola.fr" class="nav-membre" target="_blank" rel="noopener">Espace membre →</a>
     <a href="https://cheznola.fillout.com/booking" class="nav-cta" target="_blank" rel="noopener">Rejoindre Nola →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -454,6 +490,7 @@ nav {
 
 <!-- ── MOBILE MENU ── -->
 <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Menu mobile">
+
   <a href="#why">Le concept <span>→</span></a>
   <a href="#how">Comment ça se passe <span>→</span></a>
   <a href="#avis">Avis <span>→</span></a>
@@ -461,6 +498,7 @@ nav {
   <a href="#" style="opacity:.5;pointer-events:none;cursor:default;">
     Nola dans 3 ans <span class="m-soon">Bientôt</span>
   </a>
+  <a href="https://app.cheznola.fr" class="mobile-cta" target="_blank" rel="noopener">Espace membre →</a>
 </div>
 
 <!-- ── HERO ── -->
@@ -600,6 +638,7 @@ nav {
             <div class="tc-l"><div class="avs"><div class="mav mav--partner">TH</div></div><span class="tc-name tc-name--partner">Table Thématique</span></div>
             <span class="tc-s tc-s--partner">Bientôt</span>
           </div>
+        </div>
         <div class="hv-foot">4 tables par édition · Le 2ᵉ mardi du mois</div>
       </div>
     </div>
@@ -741,6 +780,8 @@ nav {
   <div class="footer-bar">
     <span class="footer-bar-logo">Nola.</span>
     <ul class="footer-links">
+      <!-- NOUVEAU : espace membre en premier, ton légèrement plus présent que les liens légaux -->
+      <li><a href="https://app.cheznola.fr" class="footer-membre" target="_blank" rel="noopener">Espace membre</a></li>
       <li><a href="/manifeste">Manifeste</a></li>
       <li><a href="/charte">Charte</a></li>
       <li><a href="/conditions">Conditions</a></li>
