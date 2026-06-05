@@ -537,15 +537,9 @@ nav {
 <!-- ── PROCHAINE TABLE ── -->
 <section class="section-next" id="next">
   <h2>Prochaine table</h2>
-  <p class="next-sub">4 tables ce soir-là.</p>
-  <div class="countdown-row">
-    <div class="cd-block"><span class="cd-n" id="cd-d">04</span><span class="cd-l">Jours</span></div>
-    <div class="cd-block"><span class="cd-n" id="cd-h">01</span><span class="cd-l">Heures</span></div>
-    <div class="cd-block"><span class="cd-n" id="cd-m">06</span><span class="cd-l">Min</span></div>
-    <div class="cd-block"><span class="cd-n" id="cd-s">45</span><span class="cd-l">Sec</span></div>
-  </div>
-  <br>
-  <div class="spots-pill">Le 2ᵉ mardi de chaque mois</div>
+  <p class="next-sub">Saison 2 · À partir du 15 septembre 2026</p>
+  <div class="spots-pill" style="margin-bottom:20px;">Nola reprend en septembre — inscris-toi pour être prévenu·e</div>
+  <a href="https://app.cheznola.fr/inscription.html" class="btn-white" target="_blank" rel="noopener" style="margin-top:8px;">Rejoindre la liste →</a>
 </section>
 
 <!-- ── TICKER ── -->
@@ -836,34 +830,6 @@ nav {
       if (!isOpen) item.classList.add('open');
     });
   });
-})();
-
-/* COUNTDOWN */
-(function () {
-  function getNextTarget() {
-    var now = new Date();
-    var d   = new Date(now.getFullYear(), now.getMonth(), 1);
-    var n   = 0;
-    while (n < 2) { if (d.getDay() === 2) n++; if (n < 2) d.setDate(d.getDate() + 1); }
-    d.setHours(19, 30, 0, 0);
-    if (d <= now) {
-      var nx = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-      var c  = 0;
-      while (c < 2) { if (nx.getDay() === 2) c++; if (c < 2) nx.setDate(nx.getDate() + 1); }
-      nx.setHours(19, 30, 0, 0);
-      return nx;
-    }
-    return d;
-  }
-  function pad(n) { return String(Math.floor(n)).padStart(2, '0'); }
-  function tick() {
-    var diff = Math.max(0, getNextTarget() - new Date());
-    document.getElementById('cd-d').textContent = pad(diff / 86400000);
-    document.getElementById('cd-h').textContent = pad((diff % 86400000) / 3600000);
-    document.getElementById('cd-m').textContent = pad((diff % 3600000) / 60000);
-    document.getElementById('cd-s').textContent = pad((diff % 60000) / 1000);
-  }
-  tick(); setInterval(tick, 1000);
 })();
 
 /* SCROLL REVEAL */
