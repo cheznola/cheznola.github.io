@@ -70,7 +70,7 @@
   --muted-lt:   #A09890;
   --border:     rgba(58,52,44,.10);
   --border-2:   rgba(58,52,44,.16);
-  --playpen:    'Playpen Sans', cursive;
+  --playpen:    'Playpen Sans', sans-serif;
   --serif:      'Instrument Serif', Georgia, serif;
   --sans:       'Inter', system-ui, sans-serif;
 }
@@ -126,8 +126,6 @@ nav {
 .nav-center { display:flex; gap:28px; list-style:none; align-items:center; }
 .nav-center a { font-size:13px; font-weight:400; color:var(--muted); text-decoration:none; transition:color .15s; }
 .nav-center a:hover { color:var(--ink); }
-.nav-soon { display:flex; align-items:center; gap:5px; font-size:13px; color:var(--muted-lt); }
-.nav-soon-badge { font-size:10px; font-weight:700; letter-spacing:.05em; background:var(--brown-pale); color:var(--brown-deep); border-radius:100px; padding:2px 8px; }
 .nav-right { display:flex; align-items:center; gap:10px; }
 
 /* ── NAV MEMBRE BUTTON (NOUVEAU) ── */
@@ -166,7 +164,6 @@ nav {
 .mobile-menu a { font-size:16px; font-weight:500; color:var(--ink); text-decoration:none; padding:14px 0; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; transition:color .15s; }
 .mobile-menu a:last-of-type { border-bottom:none; }
 .mobile-menu a:hover { color:var(--brown); }
-.m-soon { font-size:10px; font-weight:700; letter-spacing:.05em; background:var(--brown-pale); color:var(--brown-deep); border-radius:100px; padding:2px 8px; }
 
 /* ── MOBILE MENU MEMBRE (NOUVEAU) ── */
 .mobile-menu a.mobile-membre {
@@ -185,8 +182,10 @@ nav {
 .hero-wordmark { font-family:var(--playpen); font-weight:800; font-size:clamp(52px,12vw,96px); color:var(--brown); display:block; line-height:1; letter-spacing:-1px; margin-bottom:24px; }
 .hero h1 { font-weight:800; font-size:clamp(24px,5vw,48px); letter-spacing:-1.5px; line-height:1.1; color:var(--ink); margin-bottom:22px; }
 .hero h1 em { font-style:italic; font-family:var(--serif); font-weight:400; color:var(--brown); }
+.hero-def { font-size:clamp(17px,2.1vw,20px); color:var(--ink); line-height:1.5; max-width:620px; margin:0 auto 20px; }
 .hero-tags { display:inline-flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom:14px; }
 .tag { border:1.5px solid var(--ink); border-radius:100px; padding:5px 16px; font-size:12.5px; font-weight:500; color:var(--ink); }
+.hero-fn { font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted-lt); margin-bottom:14px; }
 .hero-sub { font-size:15px; color:var(--muted); margin-bottom:16px; }
 .asso-pill { display:inline-flex; align-items:center; gap:6px; background:var(--sage-pale); border:1px solid rgba(110,126,100,.2); border-radius:100px; padding:5px 14px; margin-bottom:36px; font-size:11.5px; font-weight:500; color:var(--sage-bg); }
 .hero-actions { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:44px; }
@@ -201,6 +200,7 @@ nav {
 .av:first-child { margin-left:0; }
 .proof-txt { font-size:13px; color:var(--muted); }
 .proof-txt strong { color:var(--ink); font-weight:600; }
+.proof-txt sup { font-size:.7em; }
 
 /* ── STATS ── */
 .stats-strip { border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--cream); display:flex; flex-wrap:wrap; justify-content:center; }
@@ -209,16 +209,45 @@ nav {
 .stat-n { display:block; font-size:30px; font-weight:800; letter-spacing:-1.5px; color:var(--ink); line-height:1; margin-bottom:4px; }
 .stat-l { font-size:12px; color:var(--muted); }
 
-/* ── PROCHAINE TABLE ── */
-.section-next { background:var(--sage); padding:64px 24px; text-align:center; color:#fff; }
-.section-next h2 { font-weight:800; font-size:clamp(26px,5vw,36px); letter-spacing:-1px; margin-bottom:6px; }
-.next-sub { font-size:14px; opacity:.65; margin-bottom:36px; }
-.countdown-row { display:inline-flex; background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.12); border-radius:10px; overflow:hidden; margin-bottom:36px; }
-.cd-block { padding:20px 28px; border-right:1px solid rgba(255,255,255,.10); min-width:80px; text-align:center; }
-.cd-block:last-child { border-right:none; }
-.cd-n { display:block; font-size:clamp(36px,8vw,50px); font-weight:800; letter-spacing:-2px; line-height:1; color:#fff; margin-bottom:6px; font-variant-numeric:tabular-nums; }
-.cd-l { display:block; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.4); }
-.spots-pill { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18); border-radius:100px; padding:8px 20px; font-size:13px; font-weight:500; color:rgba(255,255,255,.85); }
+/* ── PROCHAINE TABLE (bandeau compact) ── */
+.next-strip { background:var(--brown-pale); border-top:1px solid var(--border-2); border-bottom:1px solid var(--border-2); }
+.next-strip-inner { max-width:1120px; margin:0 auto; padding:18px 24px; display:flex; align-items:center; justify-content:center; gap:14px 26px; flex-wrap:wrap; text-align:center; }
+.next-strip-text { display:flex; align-items:baseline; justify-content:center; gap:6px 12px; flex-wrap:wrap; }
+.next-strip-title { font-weight:700; font-size:15px; color:var(--ink); letter-spacing:-.2px; }
+.next-strip-ctx { font-size:14px; color:var(--brown-deep); }
+.next-strip-cta { font-size:13px; padding:11px 22px; }
+
+/* ── SAISON (rentrée septembre 2026 — affiche, fond sombre) ── */
+.section-saison { background:var(--dark); color:#F4EFE4; padding:100px 24px; text-align:center; }
+.saison-eyebrow { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--brown); display:block; margin-bottom:24px; }
+.saison-lead { font-family:var(--serif); font-weight:400; font-size:clamp(38px,7vw,72px); line-height:1.04; letter-spacing:-.5px; color:#F4EFE4; }
+.saison-lead-time { display:block; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:.02em; color:rgba(244,239,228,.55); margin-top:12px; }
+.saison-rest { font-size:clamp(14px,3.6vw,17px); color:rgba(244,239,228,.5); letter-spacing:.01em; margin-top:44px; }
+.saison-cadence { display:block; font-size:12px; letter-spacing:.04em; color:rgba(244,239,228,.4); margin-top:10px; }
+.saison-note { font-size:15px; color:rgba(244,239,228,.62); line-height:1.75; margin:44px auto 34px; max-width:460px; }
+
+/* ── QUI EST À TABLE (réassurance seniors) ── */
+.section-tables { padding:80px 24px; background:var(--cream-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.tables-inner { max-width:720px; margin:0 auto; }
+.section-tables h2 { font-weight:800; font-size:clamp(26px,4.5vw,38px); letter-spacing:-1.2px; line-height:1.12; color:var(--ink); margin-bottom:16px; }
+.section-tables h2 em { font-style:italic; font-family:var(--serif); font-weight:400; color:var(--brown); }
+.tables-lead { font-size:16px; color:var(--muted); line-height:1.7; margin-bottom:40px; max-width:560px; }
+.tables-list { list-style:none; display:flex; flex-direction:column; margin-bottom:14px; }
+.tables-caption { font-size:12.5px; color:var(--muted-lt); margin:0 0 40px; letter-spacing:.01em; }
+.tbl-row { display:flex; flex-direction:column; gap:5px; padding:18px 0; border-bottom:1px solid var(--border); }
+.tbl-row:first-child { border-top:1px solid var(--border); }
+.tbl-month { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted-lt); }
+.tbl-roles { font-size:15.5px; color:var(--ink); line-height:1.55; }
+.tables-reassure { display:flex; flex-direction:column; gap:14px; }
+.tables-reassure p { font-size:15px; color:var(--ink); line-height:1.65; }
+.tables-reassure p:last-child { color:var(--muted); }
+
+/* ── CE QUI CHANGE EN SAISON 2 ── */
+.season2 { padding:52px 24px; }
+.season2-inner { max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:14px; }
+.season2-inner p { font-size:15px; color:var(--ink); line-height:1.65; }
+.season2-link { color:var(--brown); font-weight:600; text-decoration:none; white-space:nowrap; }
+.season2-link:hover { color:var(--brown-deep); text-decoration:underline; }
 
 /* ── TICKER ── */
 .ticker-wrap { overflow:hidden; background:var(--cream-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:12px 0; }
@@ -257,6 +286,8 @@ nav {
 .step-num { width:28px; height:28px; border-radius:50%; background:var(--parchment); border:1.5px solid rgba(200,117,66,.35); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; font-weight:800; color:var(--brown); margin-top:2px; }
 .step-body strong { display:block; font-size:14px; font-weight:700; color:var(--ink); margin-bottom:3px; }
 .step-body span { font-size:13.5px; color:var(--muted); line-height:1.55; }
+.how-engage { font-size:14px; color:var(--ink); line-height:1.6; margin-top:22px; }
+.how-location { font-size:13.5px; color:var(--muted); line-height:1.6; margin-top:12px; }
 .how-visual { background:var(--parchment); border:1px solid var(--border-2); border-radius:12px; padding:24px; position:sticky; top:78px; }
 .hv-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
 .hv-title { font-size:11px; font-weight:700; letter-spacing:.10em; text-transform:uppercase; color:var(--muted); }
@@ -320,8 +351,9 @@ nav {
 .orig-feats li { display:flex; align-items:center; gap:12px; font-size:15px; font-weight:500; color:var(--ink); padding:10px 0; border-bottom:1px solid var(--border); }
 .orig-feats li:last-child { border-bottom:none; }
 .orig-feats li::before { content:'✓'; color:var(--sage-bg); font-weight:800; font-size:14px; flex-shrink:0; }
-.orig-notes { margin-bottom:32px; }
-.orig-notes p { font-family:var(--serif); font-style:italic; font-size:14px; color:var(--muted-lt); line-height:1.65; margin-bottom:4px; }
+.orig-cover { max-width:460px; margin:0 auto 24px; display:flex; flex-direction:column; gap:8px; }
+.orig-cover p { font-size:14.5px; color:var(--ink); line-height:1.6; }
+.orig-balance { max-width:460px; margin:0 auto 28px; font-size:14px; color:var(--muted); line-height:1.6; }
 
 /* ── CONVERSATIONS ── */
 .section-conv { background:var(--cream-2); padding:80px 24px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -412,15 +444,9 @@ nav {
 
   /* STATS */
   .stats-strip { flex-wrap:wrap; }
-  .stat-item { flex:1 1 50%; border-right:none; border-bottom:1px solid var(--border); }
+  .stat-item { flex:1 1 50%; padding:24px 14px; border-right:none; border-bottom:1px solid var(--border); }
   .stat-item:nth-child(odd) { border-right:1px solid var(--border); }
   .stat-item:nth-last-child(-n+2) { border-bottom:none; }
-
-  /* COUNTDOWN */
-  .section-next { padding:56px 16px; }
-  .countdown-row { width:100%; }
-  .cd-block { flex:1; padding:14px 6px; min-width:0; }
-  .cd-n { font-size:28px; letter-spacing:-1.5px; }
 
   /* FEATURES */
   .section-features { padding:56px 16px; }
@@ -472,17 +498,11 @@ nav {
   <ul class="nav-center">
     <li><a href="#why">Le concept</a></li>
     <li><a href="#how">Comment ça se passe</a></li>
-    <li>
-      <span class="nav-soon">
-        Nola dans 3 ans
-        <span class="nav-soon-badge">Bientôt</span>
-      </span>
-    </li>
   </ul>
   <div class="nav-right">
     <!-- NOUVEAU : bouton espace membre orange, avant le CTA -->
     <a href="https://app.cheznola.fr/accueil.html" class="nav-membre" target="_blank" rel="noopener">Espace membre →</a>
-    <a href="https://app.cheznola.fr/inscription.html" class="nav-cta" target="_blank" rel="noopener">Rejoindre Nola →</a>
+    <a href="https://app.cheznola.fr/inscription.html" class="nav-cta" target="_blank" rel="noopener">Demander une place →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -496,9 +516,6 @@ nav {
   <a href="#how">Comment ça se passe <span>→</span></a>
   <a href="#avis">Avis <span>→</span></a>
   <a href="#faq">FAQ <span>→</span></a>
-  <a href="#" style="opacity:.5;pointer-events:none;cursor:default;">
-    Nola dans 3 ans <span class="m-soon">Bientôt</span>
-  </a>
   <a href="https://app.cheznola.fr/accueil.html" class="mobile-cta" target="_blank" rel="noopener">Espace membre →</a>
 </div>
 
@@ -507,40 +524,55 @@ nav {
   <div class="hero-badge fu d1">Depuis nov. 2025 · Paris</div>
   <span class="hero-wordmark fu d2">Nola.</span>
   <h1 class="fu d3">Des dîners qui <em>comptent,</em><br>entre Product People.</h1>
+  <p class="hero-def fu d3">Une table de quatre à six product people expérimentés, un jeudi par mois, dans un restaurant parisien. On y vient pour parler du métier, pas pour réseauter.</p>
   <div class="hero-tags fu d3">
-    <span class="tag">Product</span>
-    <span class="tag">Design</span>
-    <span class="tag">Data</span>
-    <span class="tag">Tech</span>
+    <span class="tag">PM/PO confirmés</span>
+    <span class="tag">Lead / Head</span>
+    <span class="tag">CPO / C-level</span>
   </div>
+  <p class="hero-fn fu d3">Produit · Tech · Data · Design</p>
   <p class="hero-sub fu d4">1x/mois. En petit comité.</p>
   <div class="asso-pill fu d4">Association loi 1901 · Paris</div>
   <div class="hero-actions fu d5">
-    <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" target="_blank" rel="noopener">Rejoindre Nola →</a>
+    <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" target="_blank" rel="noopener">Demander une place →</a>
   </div>
   <div class="hero-proof fu d5">
     <div class="av-stack">
       <div class="av">PM</div><div class="av">DS</div><div class="av">CT</div>
       <div class="av">DA</div><div class="av">+</div>
     </div>
-    <p class="proof-txt">Rejoins <strong>150+ membres</strong> déjà dans la communauté.</p>
+    <p class="proof-txt">Déjà <strong>+170 product people</strong> intéressés par Nola à Paris. <strong>8 éditions</strong> depuis novembre 2025. La 9<sup>e</sup> est le <strong>15 septembre</strong>.</p>
   </div>
 </section>
 
 <!-- ── STATS ── -->
 <div class="stats-strip">
-  <div class="stat-item"><span class="stat-n">1</span><span class="stat-l">Édition mensuelle</span></div>
-  <div class="stat-item"><span class="stat-n">150+</span><span class="stat-l">Membres</span></div>
-  <div class="stat-item"><span class="stat-n">4</span><span class="stat-l">Tables par édition</span></div>
-  <div class="stat-item"><span class="stat-n">4–6</span><span class="stat-l">Par table</span></div>
+  <div class="stat-item"><span class="stat-n">1</span><span class="stat-l">Édition par mois</span></div>
+  <div class="stat-item"><span class="stat-n">1</span><span class="stat-l">Table</span></div>
+  <div class="stat-item"><span class="stat-n">4–6</span><span class="stat-l">Membres par table</span></div>
+  <div class="stat-item"><span class="stat-n">8</span><span class="stat-l">Éditions depuis novembre 2025</span></div>
 </div>
 
-<!-- ── PROCHAINE TABLE ── -->
-<section class="section-next" id="next">
-  <h2>Prochaine table</h2>
-  <p class="next-sub">Saison 2 · À partir du 15 septembre 2026</p>
-  <div class="spots-pill" style="margin-bottom:20px;">Nola reprend en septembre, inscris-toi pour être prévenu·e</div>
-  <a href="https://app.cheznola.fr/inscription.html" class="btn-white" target="_blank" rel="noopener" style="margin-top:8px;">Rejoindre la liste →</a>
+<!-- ── PROCHAINE TABLE (bandeau compact) ── -->
+<section class="next-strip">
+  <div class="next-strip-inner">
+    <div class="next-strip-text">
+      <span class="next-strip-title">Prochaine table</span>
+      <span class="next-strip-ctx">Saison 2 · Reprise le jeudi 17 septembre 2026, 19h30</span>
+    </div>
+    <a href="https://app.cheznola.fr/inscription.html" class="btn-primary next-strip-cta" target="_blank" rel="noopener">Demander une place →</a>
+  </div>
+</section>
+
+<!-- ── CE QUI CHANGE EN SAISON 2 ── -->
+<section class="season2">
+  <div class="season2-inner">
+    <span class="eyebrow">En saison 2</span>
+    <p>Le rythme est publié à l'avance. Quatre dates jusqu'en décembre, connues dès la reprise.</p>
+    <p>Une seule table par mois, par choix. Nola a fonctionné jusqu'à quatre tables. La saison 2 revient à une table unique. <a href="/manifeste" class="season2-link">Pourquoi ce choix →</a></p>
+    <p>Ce n'est pas un meetup. À quatre ou six autour d'une table, on est acteur et non spectateur. Ni intervenant, ni programme, ni thème imposé.</p>
+    <p>Le lien ne s'arrête pas au dessert. L'espace membre garde les profils des convives accessibles après le dîner et porte la réservation.</p>
+  </div>
 </section>
 
 <!-- ── TICKER ── -->
@@ -595,21 +627,23 @@ nav {
       <div class="how-steps">
         <div class="how-step">
           <div class="step-num">01</div>
-          <div class="step-body"><strong>Tu rejoins Nola</strong><span>On te place pour la soirée</span></div>
+          <div class="step-body"><strong>Tu demandes une place pour une date</strong><span>Dix euros.</span></div>
         </div>
         <div class="how-step">
           <div class="step-num">02</div>
-          <div class="step-body"><strong>On compose ta table</strong><span>Selon ton profil et ce qui t'intéresse</span></div>
+          <div class="step-body"><strong>Nola compose la table</strong><span>Ta demande est retenue, ou remboursée.</span></div>
         </div>
         <div class="how-step">
           <div class="step-num">03</div>
-          <div class="step-body"><strong>Tu reçois les infos</strong><span>Le lieu, l'heure, on s'occupe du reste</span></div>
+          <div class="step-body"><strong>Tu reçois le lieu et l'heure</strong><span>Quelques jours avant.</span></div>
         </div>
         <div class="how-step">
           <div class="step-num">04</div>
-          <div class="step-body"><strong>Tu vis l'expérience</strong><span>Des échanges sincères, autour d'un bon dîner.</span></div>
+          <div class="step-body"><strong>Tu découvres ta table</strong><span>À table.</span></div>
         </div>
-        <a href="https://app.cheznola.fr/inscription.html" class="btn-primary btn-how" target="_blank" rel="noopener">Accéder aux tables →</a>
+        <p class="how-engage">Demander une place coûte dix euros. Si Nola retient ta demande pour l'édition, tu es placé à la table. Si ton profil ne correspond pas à cette table, tu es intégralement remboursé sous 48 heures. Si tu te désistes toi-même, la place n'est ni reportée ni remboursée, sauf cas exceptionnel apprécié par Nola.</p>
+        <p class="how-location">Les dîners ont lieu dans des restaurants parisiens. Le lieu exact est communiqué quelques jours avant, une fois la table composée.</p>
+        <a href="https://app.cheznola.fr/inscription.html" class="btn-primary btn-how" target="_blank" rel="noopener">Demander une place →</a>
       </div>
       <div class="how-visual" style="background:none;border:none;padding:0;overflow:hidden;">
         <img
@@ -618,6 +652,49 @@ nav {
           style="width:100%;max-height:480px;border-radius:10px;display:block;object-fit:cover;"
         >
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SAISON (affiche 4 dates — seul bloc sombre du corps) ── -->
+<section class="section-saison" id="saison">
+  <span class="saison-eyebrow">La reprise</span>
+  <p class="saison-lead">Jeudi 17 septembre 2026<span class="saison-lead-time">19h30</span></p>
+  <p class="saison-rest">8 octobre · 5 novembre · 10 décembre</p>
+  <span class="saison-cadence">Tous les jeudis, 19h30</span>
+  <p class="saison-note">Chaque date, une table de quatre à six. Les places sont comptées.<br>On demande sa place depuis l'espace membre, une fois Nola rejoint.</p>
+  <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" target="_blank" rel="noopener">Demander une place →</a>
+</section>
+
+<!-- ── QUI EST À TABLE (réassurance seniors) ── -->
+<section class="section-tables" id="tables">
+  <div class="tables-inner">
+    <span class="eyebrow">Qui est à table</span>
+    <h2>Les tables passées, <em>sans les noms.</em></h2>
+    <p class="tables-lead">Par rôle et séniorité. Jamais tirée au sort.</p>
+    <ul class="tables-list">
+      <li class="tbl-row">
+        <span class="tbl-month">Novembre 2025</span>
+        <span class="tbl-roles">CTO / VP Engineering · Founder produit · PMM · Senior PM</span>
+      </li>
+      <li class="tbl-row">
+        <span class="tbl-month">Décembre 2025</span>
+        <span class="tbl-roles">Head of Product · Data PM · PMM · Product Designer · PM · Senior PM</span>
+      </li>
+      <li class="tbl-row">
+        <span class="tbl-month">Janvier 2026</span>
+        <span class="tbl-roles">CPO / CPTO · Lead PM · Senior PM</span>
+      </li>
+      <li class="tbl-row">
+        <span class="tbl-month">Mai 2026</span>
+        <span class="tbl-roles">Engineering Manager · Lead PM · PM · Senior PM</span>
+      </li>
+    </ul>
+    <p class="tables-caption">Saison 1, de novembre 2025 à juin 2026, close. Un extrait de quatre tables.</p>
+    <div class="tables-reassure">
+      <p>Personne ne vend rien. Pas de pitch, pas de recruteur en chasse.</p>
+      <p>Chaque table est composée à la main, une personne après l'autre. Quelqu'un de Nola est toujours à table. La table fait quatre à six, tout le monde ne dîne pas chaque mois.</p>
+      <p>On ne s'inscrit pas, on est placé.</p>
     </div>
   </div>
 </section>
@@ -645,23 +722,24 @@ nav {
 <!-- ── ORIGINALS ── -->
 <section class="section-originals" id="originals">
   <div class="orig-header">
-    <span class="eyebrow">Réserver ta place</span>
+    <span class="eyebrow">Demander une place</span>
     <h2>Originals</h2>
-    <p class="orig-lead-bold">4 tables simultanées. 1x/mois.</p>
+    <p class="orig-lead-bold">La table Originals, une fois par mois.</p>
     <p class="orig-lead">Jamais la même table. Jamais le même resto.</p>
+  </div>
+  <div class="orig-cover">
+    <p>Demander une place coûte dix euros, remboursés si Nola ne retient pas ta demande pour l'édition.</p>
+    <p>Le dîner se règle au restaurant, chacun selon ce qu'il commande.</p>
+    <p>L'adhésion à l'association est incluse dès la première participation.</p>
   </div>
   <div class="orig-price">10€</div>
   <ul class="orig-feats">
-    <li>Accès à un dîner Nola</li>
-    <li>Conversations libres</li>
-    <li>Paiement à l'unité, sans engagement</li>
-    <li>4–6 pros par table, profils équilibrés</li>
+    <li>Quatre à six par table, jamais plus.</li>
+    <li>Un restaurant parisien différent à chaque fois.</li>
+    <li>Paiement à l'unité, sans engagement.</li>
   </ul>
-  <div class="orig-notes">
-    <p>Le dîner se règle au restaurant.</p>
-    <p>Adhésion à l'association incluse dès la 1ère participation.</p>
-  </div>
-  <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" style="font-size:15px;padding:14px 36px;" target="_blank" rel="noopener">Essayer →</a>
+  <p class="orig-balance">Fonctions mélangées, niveaux d'expérience comparables, attention portée à la mixité.</p>
+  <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" style="font-size:15px;padding:14px 36px;" target="_blank" rel="noopener">Demander une place →</a>
 </section>
 
 <!-- ── CONVERSATIONS ── -->
@@ -692,10 +770,10 @@ nav {
 <!-- ── MID CTA ── -->
 <section class="section-mid-cta">
   <span class="mid-logo">Nola.</span>
-  <p class="mid-desc">Déjà +150 Product People curieux de tester à Paris.</p>
-  <p class="mid-desc">PM, CPO, Designers, Data… toutes les tables sont différentes.</p>
-  <span class="mid-italic">👉 Et toi, tu rejoins laquelle ?</span>
-  <a href="https://app.cheznola.fr/inscription.html" class="btn-white" target="_blank" rel="noopener">Rejoindre Nola</a>
+  <p class="mid-desc">Déjà +170 Product People curieux à Paris.</p>
+  <p class="mid-desc">PM, CPO, Designers, Data… chaque table est différente.</p>
+  <span class="mid-italic">👉 Et toi, tu demandes ta place ?</span>
+  <a href="https://app.cheznola.fr/inscription.html" class="btn-white" target="_blank" rel="noopener">Demander une place →</a>
 </section>
 
 <!-- ── FAQ ── -->
@@ -703,32 +781,31 @@ nav {
   <h2>FAQ...</h2>
   <div class="faq-item">
     <button class="faq-q" type="button">Qui peut rejoindre Nola ?<span class="faq-icon">+</span></button>
-    <div class="faq-a">Aujourd'hui, Nola s'adresse aux Product People : CPO, Lead/Head, PM/PO, Ops, et Product Designers/Tech orientés produit.</div>
+    <div class="faq-a">Aujourd'hui, Nola s'adresse aux Product People : CPO, Lead/Head, PM/PO, Ops, et Product Designers/Tech orientés produit. Nola s'adresse à des profils qui ont déjà quelques années de pratique derrière eux. En dessous de trois ans d'expérience, ce n'est pas encore le bon moment, mais ça le sera.</div>
   </div>
   <div class="faq-item">
     <button class="faq-q" type="button">Nola, c'est quoi exactement ?<span class="faq-icon">+</span></button>
     <div class="faq-a">Nola est une association loi 1901. On se retrouve autour de dîners en petit comité. La participation sert à couvrir l'organisation. Le repas est réglé directement au restaurant.</div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" type="button">Comment devenir membre ?<span class="faq-icon">+</span></button>
-    <div class="faq-a">L'inscription est gratuite : il suffit de remplir le formulaire pour être alerté·e des dîners à venir. Ensuite, si tu veux participer une première fois, tu règles ton premier billet : l'adhésion est alors activée et offerte la première année.</div>
+    <button class="faq-q" type="button">En quoi c'est différent d'un meetup ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">Un meetup, on l'écoute. Une table de quatre à six, on la fait. Il n'y a pas de scène, pas d'intervenant, pas de programme. Chacun parle autant que les autres, et personne ne repart avec une pile de cartes de visite.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" type="button">Comment demander une place ?<span class="faq-icon">+</span></button>
+    <div class="faq-a">On remplit le formulaire, une fois. On reçoit aussitôt un accès à l'espace membre. De là, on demande une place sur la date de son choix, pour dix euros. Nola compose ensuite la table : la demande est retenue, ou remboursée. L'adhésion à l'association s'active à la première participation, elle est incluse.</div>
   </div>
   <div class="faq-item">
     <button class="faq-q" type="button">Est-ce que c'est régulier ?<span class="faq-icon">+</span></button>
-    <div class="faq-a">Un dîner par mois, à Paris. Le 2ᵉ mardi de chaque mois.</div>
+    <div class="faq-a">Un dîner par mois, à Paris, le jeudi soir. Pour la saison 2 : les 17 septembre, 8 octobre, 5 novembre et 10 décembre 2026.</div>
   </div>
   <div class="faq-item">
     <button class="faq-q" type="button">Annulation : que se passe-t-il si je ne peux plus venir ?<span class="faq-icon">+</span></button>
-    <div class="faq-a">La participation aux frais d'organisation (10€) n'est pas remboursable. En cas d'empêchement, écris-nous à hello@cheznola.fr dès que possible : nous ferons notre possible pour te proposer une place sur une édition ultérieure, selon les disponibilités.</div>
+    <div class="faq-a">Si tu te désistes, la place n'est ni reportée ni remboursée. Une exception reste possible : écris-nous à hello@cheznola.fr dès que possible, on regarde ce qu'on peut faire.</div>
   </div>
   <div class="faq-item">
     <button class="faq-q" type="button">Combien ça coûte ?<span class="faq-icon">+</span></button>
-    <div class="faq-a">
-      <ul>
-        <li><strong>Participation :</strong> 10&nbsp;€ <em>(organisation)</em></li>
-        <li><strong>Repas :</strong> chacun règle son addition au restaurant</li>
-      </ul>
-    </div>
+    <div class="faq-a">Demander une place coûte 10&nbsp;€. Si Nola ne retient pas ta demande pour l'édition, tu es intégralement remboursé sous 48 heures. En cas de désistement de ta part, la place n'est ni reportée ni remboursée, sauf cas exceptionnel apprécié par Nola. Le dîner, lui, se règle au restaurant, chacun selon ce qu'il commande.</div>
   </div>
   <div class="faq-item">
     <button class="faq-q" type="button">Comment sont composées les tables ?<span class="faq-icon">+</span></button>
@@ -750,8 +827,8 @@ nav {
     <div>
       <span class="footer-hero-logo">Nola.</span>
       <h3>On ne s'inscrit pas.<br><strong>On y est invité.</strong></h3>
-      <p>Parce que les meilleures idées naissent...<br>...rarement derrière un écran.</p>
-      <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" target="_blank" rel="noopener">Accéder aux tables →</a>
+      <p>On se présente en quelques lignes. Quelqu'un les lit, vraiment.<br>La réponse vient d'un humain.</p>
+      <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" target="_blank" rel="noopener">Demander une place →</a>
     </div>
     <div class="footer-hero-img">
       <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1775985223/Nola_footer_q2xscn.png" alt="Ambiance Nola">
@@ -838,7 +915,7 @@ nav {
   var VERIFIED = 'https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707210/instagram-verification-badge_htnu2v.jpg';
   var REVIEWS  = [
     { name:'Chloé',     role:'Product lead',           date:'10 fev. 2026',  text:"J'ai trouvé les échanges sincères, loin des codes habituels du networking. Motivée pour le prochain." },
-    { name:'Gabriel',   role:'Senior PM',              date:'10 mars 2026',  text:"Pour moi, c'était pas un event. J'ai vite senti que ce n'est pas le même registre. Et ça fait du bien p******." },
+    { name:'Gabriel',   role:'Senior PM',              date:'10 mars 2026',  text:"Pour moi, c'était pas un event. J'ai vite senti que ce n'est pas le même registre. Et ça fait du bien, putain." },
     { name:'Romain',    role:'Product Manager',        date:'10 mars 2026',  text:"La table était bien équilibrée. Je pense que j'ai créé plus de liens de qualité qu'en des années." },
     { name:'Alix',      role:'Product Designer',       date:'10 fev. 2026',  text:"On sort des discours de façade, et ça fait du bien." },
     { name:'Caroline',  role:'PMM',                    date:'10 fev. 2026',  text:"J'ai trouvé sympa de ne pas parler de son poste mais plutôt de ce qu'on vit vraiment dans son taf !" },

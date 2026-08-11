@@ -36,7 +36,7 @@
   --muted-lt:   #A09890;
   --border:     rgba(58,52,44,.10);
   --border-2:   rgba(58,52,44,.16);
-  --playpen:    'Playpen Sans', cursive;
+  --playpen:    'Playpen Sans', sans-serif;
   --serif:      'Instrument Serif', Georgia, serif;
   --sans:       'Inter', system-ui, sans-serif;
 }
@@ -89,6 +89,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
 .manifeste-tagline { margin-top: 16px; padding-top: 40px; border-top: 1px solid var(--border-2); }
 .manifeste-tagline p { font-family: var(--playpen); font-size: 20px; color: var(--brown); font-weight: 700; }
 .manifeste-tagline small { font-size: 12px; color: var(--muted-lt); display: block; margin-top: 6px; }
+.manifeste-h2 { font-size: clamp(24px, 4vw, 30px); font-weight: 800; letter-spacing: -.5px; line-height: 1.2; color: var(--ink); padding-top: 40px; border-top: 1px solid var(--border-2); }
+.manifeste-sign { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--muted); }
 
 /* CTA */
 .page-cta-block { margin-top: 56px; padding: 32px; background: var(--cream); border: 1px solid var(--border-2); border-radius: 12px; text-align: center; }
@@ -127,7 +129,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
     <li><a href="/manifeste">Manifeste</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:10px;">
-    <a href="https://app.cheznola.fr/inscription.html" class="nav-cta" target="_blank" rel="noopener">Rejoindre Nola →</a>
+    <a href="https://app.cheznola.fr/inscription.html" class="nav-cta" target="_blank" rel="noopener">Demander une place →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -139,7 +141,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
   <a href="/#how">Comment ça se passe <span>→</span></a>
   <a href="/manifeste">Manifeste <span>→</span></a>
   <a href="/charte">Charte <span>→</span></a>
-  <a href="https://app.cheznola.fr/inscription.html" class="mobile-cta" target="_blank" rel="noopener">Rejoindre Nola →</a>
+  <a href="https://app.cheznola.fr/inscription.html" class="mobile-cta" target="_blank" rel="noopener">Demander une place →</a>
 </div>
 
 <div class="page-wrap">
@@ -163,9 +165,18 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
 
     <p>Nola ne cherche pas à multiplier les rencontres. <em>Nola cherche à construire des relations.</em></p>
 
-    <p>Nola commence avec les Product People : Produit, Tech, Data, Design et s'ouvre progressivement aux métiers qui construisent, portent et font vivre des produits au quotidien.</p>
+    <p>Nola commence avec les Product People : Produit, Tech, Data, Design. D'autres métiers qui construisent et font vivre des produits y auront leur place, quand le moment sera venu.</p>
 
     <p>Le point commun n'est pas un titre. C'est la responsabilité, la complexité, et l'envie de progresser ensemble.</p>
+
+    <h2 class="manifeste-h2">La saison 2</h2>
+    <p>Nola a fonctionné jusqu'à quatre tables le même soir. Des partenariats auraient permis d'aller plus loin, plus vite, avec plus de monde autour de plus de tables.</p>
+    <p>Le choix de cette saison est l'inverse. Une seule table par mois, quatre à six personnes, composée une par une.</p>
+    <p>D'autres tables pourront naître à la marge, portées par la communauté elle-même. La table Originals, elle, reste ce point fixe, une fois par mois.</p>
+    <p>Ce n'est pas une limite subie, c'est ce qui fait tenir la promesse. À quatre tables, on organise des dîners. À une table, on compose une conversation. La première saison a montré que la différence se voit dès le premier quart d'heure.</p>
+    <p>Il n'y aura pas de thème annoncé, pas d'intervenant, pas de programme. Un sujet imposé transforme une table en atelier, et un invité qui vient apporter quelque chose transforme cinq convives en public. Ce que Nola protège, c'est que personne n'arrive avec un rôle.</p>
+    <p>Quatre dates jusqu'en décembre. Une table chaque fois. C'est peu, et c'est volontaire.</p>
+    <p class="manifeste-sign">Emmanuel Di Marco, président</p>
 
     <div class="manifeste-tagline">
       <p>Le lien est le produit.</p>
@@ -175,7 +186,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
 
   <div class="page-cta-block">
     <p>Tu partages cette vision ? Rejoins une table.</p>
-    <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" target="_blank" rel="noopener">Rejoindre Nola →</a>
+    <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" target="_blank" rel="noopener">Demander une place →</a>
   </div>
 </div>
 
