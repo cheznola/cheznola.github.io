@@ -196,7 +196,7 @@ nav {
 .btn-ghost-warm:hover { background:var(--cream-2); }
 .hero-proof { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
 .av-stack { display:flex; }
-.av { width:30px; height:30px; border-radius:50%; border:2px solid var(--parchment); background:var(--cream-2); margin-left:-8px; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:var(--muted); }
+.av { width:30px; height:30px; border-radius:50%; border:2px solid var(--parchment); background:var(--cream-2); margin-left:-8px; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:var(--muted); object-fit:cover; box-shadow:0 1px 2px rgba(0,0,0,.06); flex-shrink:0; }
 .av:first-child { margin-left:0; }
 .proof-txt { font-size:13px; color:var(--muted); }
 .proof-txt strong { color:var(--ink); font-weight:600; }
@@ -441,6 +441,8 @@ nav {
   .hero-wordmark { font-size:clamp(44px,14vw,72px); }
   .hero-actions { flex-direction:column; align-items:stretch; }
   .btn-primary, .btn-ghost-warm { justify-content:center; }
+  .av { margin-left:-11px; }
+  .av:first-child { margin-left:0; }
 
   /* STATS */
   .stats-strip { flex-wrap:wrap; }
@@ -538,8 +540,20 @@ nav {
   </div>
   <div class="hero-proof fu d5">
     <div class="av-stack">
-      <div class="av">PM</div><div class="av">DS</div><div class="av">CT</div>
-      <div class="av">DA</div><div class="av">+</div>
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622171/1549879253421_mflrto.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622171/1708196580143_duv9ub.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622171/1766490476311_ikhtn4.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622171/1731929985780_t6vtpm.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622171/1726043476268_mlcnt3.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622171/1579810042113_kdtab9.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622172/1739960598317_h5w4gg.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622172/1743097780868_f57kd6.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622172/1779120592986_gseots.png" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622172/1762251497836_mplucp.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622172/1761295146887_jirefv.png" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622173/1784555521351_iynh50.png" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622172/1776783141936_wbndtb.png" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <div class="av">+</div>
     </div>
     <p class="proof-txt">Déjà <strong>+170 product people</strong> intéressés par Nola à Paris. <strong>8 éditions, 20 tables</strong> depuis novembre 2025. La saison 2 reprend le <strong>17 septembre</strong>.</p>
   </div>
