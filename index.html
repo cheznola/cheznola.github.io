@@ -312,6 +312,24 @@ nav {
 .section-avis { background:var(--sage); padding:72px 24px; }
 .section-avis-inner { max-width:1120px; margin:0 auto; }
 .section-avis h2 { font-weight:800; font-size:clamp(26px,5vw,36px); letter-spacing:-1px; color:#fff; margin-bottom:44px; }
+
+/* Portraits mis en avant */
+.avis-portraits { display:flex; flex-wrap:wrap; justify-content:center; gap:24px; margin-bottom:48px; }
+.portrait-card { flex:1 1 360px; max-width:440px; background:#fff; border-radius:20px; padding:34px 30px; box-shadow:0 6px 30px rgba(0,0,0,.13); display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; }
+.portrait-photo { width:104px; height:104px; border-radius:50%; object-fit:cover; border:3px solid var(--sage-pale); box-shadow:0 3px 14px rgba(0,0,0,.14); }
+.portrait-id { display:flex; flex-direction:column; align-items:center; gap:3px; }
+.portrait-name-row { display:flex; align-items:center; gap:8px; }
+.portrait-name { font-weight:800; font-size:18px; color:rgba(0,0,0,.88); }
+.portrait-li { display:inline-flex; width:20px; height:20px; flex-shrink:0; transition:transform .12s; }
+.portrait-li:hover { transform:translateY(-1px); }
+.portrait-li img { width:100%; height:100%; object-fit:contain; display:block; }
+.portrait-role { font-size:14px; color:rgba(0,0,0,.55); }
+.portrait-quote { font-size:16px; line-height:1.62; color:rgba(0,0,0,.82); margin:0; }
+
+/* Séparateur "D'autres avis" au-dessus du carousel */
+.avis-more-label { display:flex; align-items:center; gap:16px; color:rgba(255,255,255,.72); font-size:12.5px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; margin-bottom:26px; }
+.avis-more-label::before, .avis-more-label::after { content:''; flex:1; height:1px; background:rgba(255,255,255,.22); }
+
 .avis-carousel { position:relative; }
 .avis-track-wrap { overflow:hidden; }
 .avis-track { display:flex; gap:16px; transition:transform .4s cubic-bezier(.25,.46,.45,.94); will-change:transform; }
@@ -319,15 +337,8 @@ nav {
 /* Desktop : 3 cartes visibles */
 .avis-card { flex:0 0 calc(33.333% - 11px); background:#fff; border-radius:16px; padding:22px 20px 20px; box-shadow:0 4px 24px rgba(0,0,0,.10); display:flex; flex-direction:column; gap:14px; }
 
-.avis-head { display:flex; gap:12px; align-items:flex-start; }
-.avis-avatar-wrap { position:relative; width:44px; height:44px; flex-shrink:0; }
-.avis-avatar { width:44px; height:44px; border-radius:50%; object-fit:cover; display:block; border:1.5px solid rgba(0,0,0,.06); }
-.avis-li-badge { position:absolute; right:-3px; bottom:-3px; width:18px; height:18px; border-radius:5px; background:#fff; padding:1.5px; border:1.5px solid rgba(255,255,255,.95); box-shadow:0 2px 8px rgba(0,0,0,.15); display:flex; align-items:center; justify-content:center; }
-.avis-li-badge img { width:100%; height:100%; object-fit:contain; display:block; }
 .avis-meta { min-width:0; display:flex; flex-direction:column; gap:2px; }
-.avis-name-row { display:flex; align-items:center; gap:5px; }
 .avis-name { font-weight:700; font-size:14.5px; color:rgba(0,0,0,.85); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.avis-verified { width:13px; height:13px; border-radius:50%; object-fit:cover; flex-shrink:0; }
 .avis-role { font-size:13px; color:rgba(0,0,0,.52); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .avis-date { font-size:12px; color:rgba(0,0,0,.35); }
 .avis-text { font-size:14.5px; color:rgba(0,0,0,.78); line-height:1.6; border-left:3px solid var(--brown); padding-left:12px; margin:0; }
@@ -733,6 +744,41 @@ nav {
   <div class="section-avis-inner">
     <span class="eyebrow" style="color:rgba(255,255,255,.5);">Les premiers retours</span>
     <h2>Ce qu'ils en disent 🧡</h2>
+
+    <div class="avis-portraits">
+      <article class="portrait-card">
+        <img class="portrait-photo" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_320,h_320,f_auto,q_auto,dpr_2.0/v1786622171/1549879253421_mflrto.jpg" width="104" height="104" loading="lazy" decoding="async" alt="Mehdi, Product Director">
+        <div class="portrait-id">
+          <div class="portrait-name-row">
+            <span class="portrait-name">Mehdi</span>
+            <a class="portrait-li" href="https://www.linkedin.com/in/mehdi-soliman-92355866/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Mehdi">
+              <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
+            </a>
+          </div>
+          <div class="portrait-role">Product Director</div>
+        </div>
+        <p class="portrait-quote">Pas un meetup, pas du networking. Une table de 5 product people, des sujets qu'on ne peut pas résoudre seul, et des échanges sans filtre. Du vécu, du concret, zéro jugement. Le format le plus utile auquel j'ai participé cette année.</p>
+      </article>
+
+      <!-- Emplacement portrait libre : dès accord photo obtenu, dupliquer le bloc ci-dessus et remplacer les 5 valeurs (photo Cloudinary avec g_face, prénom, URL LinkedIn, poste, citation).
+      <article class="portrait-card">
+        <img class="portrait-photo" src="URL_CLOUDINARY_g_face_w_320" width="104" height="104" loading="lazy" decoding="async" alt="PRENOM, POSTE">
+        <div class="portrait-id">
+          <div class="portrait-name-row">
+            <span class="portrait-name">PRENOM</span>
+            <a class="portrait-li" href="URL_LINKEDIN" target="_blank" rel="noopener" aria-label="Profil LinkedIn de PRENOM">
+              <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
+            </a>
+          </div>
+          <div class="portrait-role">POSTE</div>
+        </div>
+        <p class="portrait-quote">CITATION</p>
+      </article>
+      -->
+    </div>
+
+    <div class="avis-more-label">D'autres avis</div>
+
     <div class="avis-carousel">
       <div class="avis-track-wrap">
         <div class="avis-track" id="avisTrack"></div>
@@ -939,9 +985,6 @@ nav {
 
 /* CAROUSEL */
 (function () {
-  var AVATAR   = 'https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707220/Nola._2_kh6us9.png';
-  var LINKEDIN = 'https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png';
-  var VERIFIED = 'https://res.cloudinary.com/dtjcum3gb/image/upload/v1765707210/instagram-verification-badge_htnu2v.jpg';
   var REVIEWS  = [
     { name:'Chloé',     role:'Product lead',           date:'10 fev. 2026',  text:"J'ai trouvé les échanges sincères, loin des codes habituels du networking. Motivée pour le prochain." },
     { name:'Gabriel',   role:'Senior PM',              date:'10 mars 2026',  text:"Pour moi, c'était pas un event. J'ai vite senti que ce n'est pas le même registre. Et ça fait du bien, putain." },
@@ -949,8 +992,7 @@ nav {
     { name:'Alix',      role:'Product Designer',       date:'10 fev. 2026',  text:"On sort des discours de façade, et ça fait du bien." },
     { name:'Caroline',  role:'PMM',                    date:'10 fev. 2026',  text:"J'ai trouvé sympa de ne pas parler de son poste mais plutôt de ce qu'on vit vraiment dans son taf !" },
     { name:'Robin',     role:'Product Builder',        date:'20 nov. 2025',  text:"Merci encore pour le dîner, c'était très cool !! Très bon concept. Avec plaisir pour en faire un autre." },
-    { name:'Alexandra', role:'Head of Product',        date:'9 dec. 2025',   text:"Le cadre aide vraiment à sortir des échanges de surface. C'était top !" },
-    { name:'Mehdi',     role:'Product Director',       date:'9 dec. 2025',   text:"Hello Manu ! Encore merci pour hier, c'était vraiment très sympa !!" }
+    { name:'Alexandra', role:'Head of Product',        date:'9 dec. 2025',   text:"Le cadre aide vraiment à sortir des échanges de surface. C'était top !" }
   ];
 
   function esc(s) {
@@ -969,17 +1011,10 @@ nav {
     var c = document.createElement('article');
     c.className = 'avis-card';
     c.innerHTML =
-      '<div class="avis-head">' +
-        '<div class="avis-avatar-wrap">' +
-          '<img class="avis-avatar" src="' + AVATAR + '" alt="' + esc(r.name) + '" loading="lazy">' +
-          '<span class="avis-li-badge" aria-hidden="true"><img src="' + LINKEDIN + '" alt=""></span>' +
-        '</div>' +
-        '<div class="avis-meta">' +
-          '<div class="avis-name-row"><span class="avis-name">' + esc(r.name) + '</span>' +
-          '<img class="avis-verified" src="' + VERIFIED + '" alt="vérifié"></div>' +
-          '<div class="avis-role">' + esc(r.role) + '</div>' +
-          '<div class="avis-date">' + esc(r.date) + '</div>' +
-        '</div>' +
+      '<div class="avis-meta">' +
+        '<div class="avis-name">' + esc(r.name) + '</div>' +
+        '<div class="avis-role">' + esc(r.role) + '</div>' +
+        '<div class="avis-date">' + esc(r.date) + '</div>' +
       '</div>' +
       '<p class="avis-text">' + esc(r.text) + '</p>';
     track.appendChild(c);
