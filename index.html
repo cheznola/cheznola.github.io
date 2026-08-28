@@ -314,9 +314,9 @@ nav {
 .section-avis h2 { font-weight:800; font-size:clamp(26px,5vw,36px); letter-spacing:-1px; color:#fff; margin-bottom:44px; }
 
 /* Portraits mis en avant */
-.avis-portraits { display:flex; flex-wrap:wrap; justify-content:center; gap:24px; margin-bottom:48px; }
-.portrait-card { flex:1 1 360px; max-width:440px; background:#fff; border-radius:20px; padding:34px 30px; box-shadow:0 6px 30px rgba(0,0,0,.13); display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; }
-.portrait-photo { width:104px; height:104px; border-radius:50%; object-fit:cover; border:3px solid var(--sage-pale); box-shadow:0 3px 14px rgba(0,0,0,.14); }
+.avis-portraits { display:flex; flex-wrap:wrap; justify-content:center; align-items:stretch; gap:24px; margin-bottom:48px; }
+.portrait-card { flex:1 1 calc(50% - 12px); max-width:calc(50% - 12px); background:#fff; border-radius:20px; padding:34px 30px; box-shadow:0 6px 30px rgba(0,0,0,.13); display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; border:1px solid rgba(200,117,66,.28); }
+.portrait-photo { width:132px; height:132px; border-radius:50%; object-fit:cover; border:3px solid var(--sage-pale); box-shadow:0 3px 14px rgba(0,0,0,.14); }
 .portrait-id { display:flex; flex-direction:column; align-items:center; gap:3px; }
 .portrait-name-row { display:flex; align-items:center; gap:8px; }
 .portrait-name { font-weight:800; font-size:18px; color:rgba(0,0,0,.88); }
@@ -324,14 +324,7 @@ nav {
 .portrait-li:hover { transform:translateY(-1px); }
 .portrait-li img { width:100%; height:100%; object-fit:contain; display:block; }
 .portrait-role { font-size:14px; color:rgba(0,0,0,.55); }
-.portrait-quote { font-size:16px; line-height:1.62; color:rgba(0,0,0,.82); margin:0; }
-
-/* Portrait mis en avant */
-.portrait-card--featured { flex:1 1 100%; max-width:100%; flex-direction:row; align-items:center; text-align:left; gap:30px; padding:30px 36px; border:1px solid rgba(200,117,66,.28); }
-.portrait-card--featured .portrait-photo { width:132px; height:132px; }
-.portrait-card--featured .portrait-body { display:flex; flex-direction:column; gap:12px; min-width:0; }
-.portrait-card--featured .portrait-id { align-items:flex-start; }
-.portrait-card--featured .portrait-quote { font-size:19px; line-height:1.55; }
+.portrait-quote { font-size:17px; line-height:1.6; color:rgba(0,0,0,.82); margin:0; }
 
 /* Séparateur "D'autres avis" au-dessus du carousel */
 .avis-more-label { display:flex; align-items:center; gap:16px; color:rgba(255,255,255,.72); font-size:12.5px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; margin-bottom:26px; }
@@ -342,13 +335,19 @@ nav {
 .avis-track { display:flex; gap:16px; transition:transform .4s cubic-bezier(.25,.46,.45,.94); will-change:transform; }
 
 /* Desktop : 3 cartes visibles */
-.avis-card { flex:0 0 calc(33.333% - 11px); background:#fff; border-radius:16px; padding:22px 20px 20px; box-shadow:0 4px 24px rgba(0,0,0,.10); display:flex; flex-direction:column; gap:14px; }
+.avis-card { flex:0 0 calc(33.333% - 11px); background:#fff; border-radius:16px; padding:22px 20px 20px; box-shadow:0 4px 24px rgba(0,0,0,.10); display:flex; flex-direction:column; }
+.avis-body { flex:1; display:flex; align-items:center; margin-top:14px; }
 
-.avis-meta { min-width:0; display:flex; flex-direction:column; gap:2px; }
+.avis-meta { min-width:0; display:flex; flex-direction:column; gap:2px; flex:1; }
+.avis-head { display:flex; align-items:center; gap:12px; min-width:0; }
+.avis-photo { width:46px; height:46px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid var(--sage-pale); }
+.avis-li { display:inline-flex; width:16px; height:16px; flex-shrink:0; vertical-align:middle; margin-left:6px; transition:transform .12s; }
+.avis-li:hover { transform:translateY(-1px); }
+.avis-li img { width:100%; height:100%; object-fit:contain; display:block; }
+.avis-name-row { display:flex; align-items:center; min-width:0; }
 .avis-name { font-weight:700; font-size:14.5px; color:rgba(0,0,0,.85); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .avis-role { font-size:13px; color:rgba(0,0,0,.52); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.avis-date { font-size:12px; color:rgba(0,0,0,.35); }
-.avis-text { font-size:14.5px; color:rgba(0,0,0,.78); line-height:1.6; border-left:3px solid var(--brown); padding-left:12px; margin:0; }
+.avis-text { font-size:14.5px; color:rgba(0,0,0,.78); line-height:1.6; border-left:3px solid var(--brown); padding-left:12px; margin:0; width:100%; }
 .avis-nav { display:flex; align-items:center; justify-content:space-between; margin-top:24px; }
 .avis-dots { display:flex; gap:6px; align-items:center; }
 .avis-dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.35); border:none; cursor:pointer; padding:0; transition:all .2s; }
@@ -486,14 +485,9 @@ nav {
   .section-avis { padding:56px 16px; }
   .avis-card { flex:0 0 100%; }
   .avis-portraits { gap:16px; }
-  .portrait-card--featured { flex-direction:column; text-align:center; padding:30px 22px; gap:16px; }
-  .portrait-card--featured .portrait-photo { width:104px; height:104px; }
-  .portrait-card--featured .portrait-body { align-items:center; text-align:center; }
-  .portrait-card--featured .portrait-id { align-items:center; }
-  .portrait-card--featured .portrait-quote { font-size:17px; }
-  .portrait-card { padding:24px 20px; }
-  .portrait-card .portrait-photo { width:84px; height:84px; }
-  .portrait-card .portrait-quote { font-size:14.5px; }
+  .portrait-card { flex:1 1 100%; max-width:100%; padding:28px 22px; }
+  .portrait-card .portrait-photo { width:104px; height:104px; }
+  .portrait-card .portrait-quote { font-size:16px; }
 
   /* ORIGINALS */
   .section-originals { padding:56px 16px; }
@@ -582,6 +576,7 @@ nav {
       <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622173/1784555521351_iynh50.png" width="30" height="30" loading="lazy" decoding="async" alt="">
       <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786622172/1776783141936_wbndtb.png" width="30" height="30" loading="lazy" decoding="async" alt="">
       <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1786627483/1779978002249_pxvdzz.png" width="30" height="30" loading="lazy" decoding="async" alt="">
+      <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1787916307/1537376287021_bj5rb1.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
       <div class="av">+</div>
     </div>
     <p class="proof-txt">Déjà <strong>+170 product people</strong> intéressés par Nola à Paris. <strong>8 éditions, 20 tables</strong> depuis novembre 2025. La saison 2 reprend le <strong>17 septembre</strong>.</p>
@@ -754,90 +749,32 @@ nav {
     <h2>Ce qu'ils en disent 🧡</h2>
 
     <div class="avis-portraits">
-      <article class="portrait-card portrait-card--featured">
+      <article class="portrait-card">
+        <img class="portrait-photo" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_320,h_320,f_auto,q_auto,dpr_2.0/v1787916307/1537376287021_bj5rb1.jpg" width="132" height="132" loading="lazy" decoding="async" alt="Julie, CPO (ex ManoMano)">
+        <div class="portrait-id">
+          <div class="portrait-name-row">
+            <span class="portrait-name">Julie</span>
+            <a class="portrait-li" href="https://www.linkedin.com/in/colinjulie/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Julie">
+              <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
+            </a>
+          </div>
+          <div class="portrait-role">CPO (ex ManoMano)</div>
+        </div>
+        <p class="portrait-quote">Sur l'IA, j'avais l'impression d'entendre souvent les mêmes discours. À cette table, j'ai entendu quatre façons de la pratiquer au quotidien que je n'avais encore jamais croisées, racontées par des gens dont j'ignorais l'existence la veille. Ce sont des points de vue qu'on ne trouve ni sur LinkedIn ni dans sa propre boîte.</p>
+      </article>
+
+      <article class="portrait-card">
         <img class="portrait-photo" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_320,h_320,f_auto,q_auto,dpr_2.0/v1786622171/1549879253421_mflrto.jpg" width="132" height="132" loading="lazy" decoding="async" alt="Mehdi, Product Director">
-        <div class="portrait-body">
-          <div class="portrait-id">
-            <div class="portrait-name-row">
-              <span class="portrait-name">Mehdi</span>
-              <a class="portrait-li" href="https://www.linkedin.com/in/mehdi-soliman-92355866/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Mehdi">
-                <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
-              </a>
-            </div>
-            <div class="portrait-role">Product Director (Payfit)</div>
-          </div>
-          <p class="portrait-quote">Pas un meetup, pas du networking. Une table de 5 product people, des sujets qu'on ne peut pas résoudre seul, et des échanges sans filtre. Du vécu, du concret, zéro jugement. Le format le plus utile auquel j'ai participé cette année.</p>
-        </div>
-      </article>
-
-      <article class="portrait-card">
-        <img class="portrait-photo" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_320,h_320,f_auto,q_auto,dpr_2.0/v1786622172/1739960598317_h5w4gg.jpg" width="104" height="104" loading="lazy" decoding="async" alt="Nathalia, Senior Product Manager">
         <div class="portrait-id">
           <div class="portrait-name-row">
-            <span class="portrait-name">Nathalia</span>
-            <a class="portrait-li" href="https://www.linkedin.com/in/nathalia-nemer/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Nathalia">
+            <span class="portrait-name">Mehdi</span>
+            <a class="portrait-li" href="https://www.linkedin.com/in/mehdi-soliman-92355866/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Mehdi">
               <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
             </a>
           </div>
-          <div class="portrait-role">Senior Product Manager</div>
+          <div class="portrait-role">Product Director (Payfit)</div>
         </div>
-        <p class="portrait-quote">Super occasion pour échanger sur notre quotidien en tant que Product people, dans un cadre assez décontracté. Merci !</p>
-      </article>
-
-      <article class="portrait-card">
-        <img class="portrait-photo" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_320,h_320,f_auto,q_auto,dpr_2.0/v1786691795/1676302189693_z3qe19.jpg" width="104" height="104" loading="lazy" decoding="async" alt="Romain Glé, Founder / Product Designer">
-        <div class="portrait-id">
-          <div class="portrait-name-row">
-            <span class="portrait-name">Romain Glé</span>
-            <a class="portrait-li" href="https://www.linkedin.com/in/romaingle/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Romain Glé">
-              <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
-            </a>
-          </div>
-          <div class="portrait-role">Founder / Product Designer</div>
-        </div>
-        <p class="portrait-quote">C'est toujours un plaisir de faire un dîner Nola. Ce sont chaque fois de belles rencontres autour d'un bon repas. Je n'ai jamais été déçu et les personnes que je rencontre m'apportent de nouvelles perspectives sur le métier ce qui vaut tous les meetups du monde.</p>
-      </article>
-
-      <article class="portrait-card">
-        <img class="portrait-photo" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_320,h_320,f_auto,q_auto,dpr_2.0/v1786622172/1743097780868_f57kd6.jpg" width="104" height="104" loading="lazy" decoding="async" alt="Astrid, Senior Product Manager">
-        <div class="portrait-id">
-          <div class="portrait-name-row">
-            <span class="portrait-name">Astrid</span>
-            <a class="portrait-li" href="https://www.linkedin.com/in/astrid-mancel-261584b6/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Astrid">
-              <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
-            </a>
-          </div>
-          <div class="portrait-role">Senior Product Manager</div>
-        </div>
-        <p class="portrait-quote">L'initiative fonctionne vraiment bien : j'ai rencontré des profils variés, juniors et seniors, et l'ambiance était agréable. Nola a ce talent rare de mettre les gens à l'aise, ça se voit et ça fait toute la différence.</p>
-      </article>
-
-      <article class="portrait-card">
-        <img class="portrait-photo" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_320,h_320,f_auto,q_auto,dpr_2.0/v1786622172/1761295146887_jirefv.png" width="104" height="104" loading="lazy" decoding="async" alt="Robin, Product Builder">
-        <div class="portrait-id">
-          <div class="portrait-name-row">
-            <span class="portrait-name">Robin</span>
-            <a class="portrait-li" href="https://www.linkedin.com/in/robin-labrot/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Robin">
-              <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
-            </a>
-          </div>
-          <div class="portrait-role">Product Builder (ex Lemlist)</div>
-        </div>
-        <p class="portrait-quote">J'ai été parmi les premiers à participer à un dîner Nola, et je ne peux que recommander !! Les profils autour de la table étaient suffisamment différents pour rendre les échanges intéressants, tout en partageant un même univers : celui du produit.</p>
-      </article>
-
-      <article class="portrait-card">
-        <img class="portrait-photo" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_320,h_320,f_auto,q_auto,dpr_2.0/v1786622171/1579810042113_kdtab9.jpg" width="104" height="104" loading="lazy" decoding="async" alt="Alaric, Lead AI Engineer">
-        <div class="portrait-id">
-          <div class="portrait-name-row">
-            <span class="portrait-name">Alaric</span>
-            <a class="portrait-li" href="https://www.linkedin.com/in/meskini-wajd/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Alaric">
-              <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="20" height="20">
-            </a>
-          </div>
-          <div class="portrait-role">Lead AI Engineer</div>
-        </div>
-        <p class="portrait-quote">Ce qui frappe dans un dîner Nola, c'est l'équilibre des tables. Nola a un vrai talent pour composer un mix d'énergies, de compétences et de séniorités. Personne n'aborde les sujets de la même façon, et c'est ce qui rend les échanges riches. Le meilleur format de ce genre que j'ai testé cette année. 5/5 would do again.</p>
+        <p class="portrait-quote">Pas un meetup, pas du networking. Une table de 5 product people, des sujets qu'on ne peut pas résoudre seul, et des échanges sans filtre. Du vécu, du concret, zéro jugement. Le format le plus utile auquel j'ai participé cette année.</p>
       </article>
 
       <!-- Emplacement portrait libre : dès accord photo obtenu, dupliquer un bloc portrait-card ci-dessus et remplacer les 5 valeurs (photo Cloudinary avec g_face, prénom, URL LinkedIn, poste, citation).
@@ -1065,13 +1002,15 @@ nav {
 
 /* CAROUSEL */
 (function () {
-  var REVIEWS  = [
-    { name:'Chloé',     role:'Product lead',           date:'10 fev. 2026',  text:"J'ai trouvé les échanges sincères, loin des codes habituels du networking. Motivée pour le prochain." },
-    { name:'Gabriel',   role:'Senior PM',              date:'10 mars 2026',  text:"Pour moi, c'était pas un event. J'ai vite senti que ce n'est pas le même registre. Et ça fait du bien, putain." },
-    { name:'Tom',       role:'Product Manager',        date:'10 mars 2026',  text:"La table était bien équilibrée. Je pense que j'ai créé plus de liens de qualité qu'en des années." },
-    { name:'Alix',      role:'Product Designer',       date:'10 fev. 2026',  text:"On sort des discours de façade, et ça fait du bien." },
-    { name:'Caroline',  role:'PMM',                    date:'10 fev. 2026',  text:"J'ai trouvé sympa de ne pas parler de son poste mais plutôt de ce qu'on vit vraiment dans son taf !" },
-    { name:'Alexandra', role:'Head of Product',        date:'9 dec. 2025',   text:"Le cadre aide vraiment à sortir des échanges de surface. C'était top !" }
+  var LI_LOGO = 'https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png';
+  var CLD = 'https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/';
+
+  var REVIEWS = [
+    { name:'Romain',   role:'Founder / Product Designer', photo:CLD+'v1786691795/1676302189693_z3qe19.jpg', li:'https://www.linkedin.com/in/romaingle/', text:"C'est toujours un plaisir de faire un dîner Nola. Ce sont chaque fois de belles rencontres autour d'un bon repas. Je n'ai jamais été déçu et les personnes que je rencontre m'apportent de nouvelles perspectives sur le métier ce qui vaut tous les meetups du monde." },
+    { name:'Nathalia', role:'Senior Product Manager', photo:CLD+'v1786622172/1739960598317_h5w4gg.jpg', li:'https://www.linkedin.com/in/nathalia-nemer/', text:"Super occasion pour échanger sur notre quotidien en tant que Product people, dans un cadre assez décontracté. Merci !" },
+    { name:'Robin',    role:'Product Builder (ex Lemlist)', photo:CLD+'v1786622172/1761295146887_jirefv.png', li:'https://www.linkedin.com/in/robin-labrot/', text:"J'ai été parmi les premiers à participer à un dîner Nola, et je ne peux que recommander !! Les profils autour de la table étaient suffisamment différents pour rendre les échanges intéressants, tout en partageant un même univers : celui du produit." },
+    { name:'Astrid',   role:'Senior Product Manager', photo:CLD+'v1786622172/1743097780868_f57kd6.jpg', li:'https://www.linkedin.com/in/astrid-mancel-261584b6/', text:"L'initiative fonctionne vraiment bien : j'ai rencontré des profils variés, juniors et seniors, et l'ambiance était agréable. Nola a ce talent rare de mettre les gens à l'aise, ça se voit et ça fait toute la différence." },
+    { name:'Alaric',   role:'Lead AI Engineer', photo:CLD+'v1786622171/1579810042113_kdtab9.jpg', li:'https://www.linkedin.com/in/meskini-wajd/', text:"Ce qui frappe dans un dîner Nola, c'est l'équilibre des tables. Nola a un vrai talent pour composer un mix d'énergies, de compétences et de séniorités. Personne n'aborde les sujets de la même façon, et c'est ce qui rend les échanges riches. Le meilleur format de ce genre que j'ai testé cette année. 5/5 would do again." }
   ];
 
   function esc(s) {
@@ -1089,13 +1028,23 @@ nav {
   REVIEWS.forEach(function (r) {
     var c = document.createElement('article');
     c.className = 'avis-card';
+
+    var liHtml = r.li
+      ? '<a class="avis-li" href="' + esc(r.li) + '" target="_blank" rel="noopener" aria-label="Profil LinkedIn de ' + esc(r.name) + '"><img src="' + LI_LOGO + '" alt="" width="16" height="16"></a>'
+      : '';
+    var photoHtml = r.photo
+      ? '<img class="avis-photo" src="' + esc(r.photo) + '" width="46" height="46" loading="lazy" decoding="async" alt="">'
+      : '';
+
     c.innerHTML =
-      '<div class="avis-meta">' +
-        '<div class="avis-name">' + esc(r.name) + '</div>' +
-        '<div class="avis-role">' + esc(r.role) + '</div>' +
-        '<div class="avis-date">' + esc(r.date) + '</div>' +
+      '<div class="avis-head">' +
+        photoHtml +
+        '<div class="avis-meta">' +
+          '<div class="avis-name-row"><span class="avis-name">' + esc(r.name) + '</span>' + liHtml + '</div>' +
+          '<div class="avis-role">' + esc(r.role) + '</div>' +
+        '</div>' +
       '</div>' +
-      '<p class="avis-text">' + esc(r.text) + '</p>';
+      '<div class="avis-body"><p class="avis-text">' + esc(r.text) + '</p></div>';
     track.appendChild(c);
   });
 
