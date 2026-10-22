@@ -117,6 +117,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
   .footer-bar { flex-direction: column; text-align: center; padding: 20px 16px; }
   .footer-links { justify-content: center; }
 }
+a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!important;}
 </style>
 </head>
 <body>
@@ -129,7 +130,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
     <li><a href="/manifeste">Manifeste</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:10px;">
-    <a href="https://app.cheznola.fr/inscription.html" class="nav-cta" target="_blank" rel="noopener">Rejoindre une table →</a>
+    <a class="nav-cta is-disabled" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -141,7 +142,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
   <a href="/#how">Comment ça se passe <span>→</span></a>
   <a href="/manifeste">Manifeste <span>→</span></a>
   <a href="/charte">Charte <span>→</span></a>
-  <a href="https://app.cheznola.fr/inscription.html" class="mobile-cta" target="_blank" rel="noopener">Rejoindre une table →</a>
+  <a class="mobile-cta is-disabled" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
 </div>
 
 <div class="page-wrap">
@@ -186,7 +187,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 58px; di
 
   <div class="page-cta-block">
     <p>Tu partages cette vision ? Rejoins une table.</p>
-    <a href="https://app.cheznola.fr/inscription.html" class="btn-primary" target="_blank" rel="noopener">Rejoindre une table →</a>
+    <a class="btn-primary is-disabled" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
   </div>
 </div>
 
