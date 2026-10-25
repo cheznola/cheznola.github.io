@@ -202,11 +202,38 @@ nav {
 /* Puce ronde terracotta dessinée en CSS */
 .closing-list li::before { content:''; position:absolute; left:2px; top:.6em; width:7px; height:7px; border-radius:50%; background:var(--brown); }
 .closing-sign { font-family:var(--serif); font-style:italic; font-size:19px; line-height:1.4; color:var(--ink); }
-.closing-sign strong { font-family:var(--sans); font-style:normal; font-weight:700; font-size:16px; }
+/* Ligne vide entre le merci et la signature */
+.closing-author { display:flex; align-items:center; gap:8px; margin-top:19px; font-size:16px; line-height:1.4; color:var(--ink); }
+.closing-author strong { font-weight:700; }
+.closing-li { display:inline-flex; width:16px; height:16px; flex-shrink:0; transition:transform .12s; }
+.closing-li:hover { transform:translateY(-1px); }
+.closing-li img { width:100%; height:100%; object-fit:contain; display:block; }
 
 /* Sous 600px : padding de l'encadré réduit */
 @media(max-width:599px) {
   .closing { padding:22px 18px; }
+}
+
+/* ── AVEC LE RECUL (même famille que .closing, sur fond transparent) ── */
+.hindsight { padding:0 24px 72px; }
+.hindsight-eyebrow { text-align:center; }
+.hindsight-inner { max-width:780px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.hindsight-block { background:transparent; border:1px solid rgba(200,117,66,.28); border-radius:12px; padding:28px; text-align:left; min-width:0; }
+/* Titre : même style que .closing-title */
+.hindsight-title { font-size:12px; font-weight:700; color:var(--brown-deep); letter-spacing:.07em; text-transform:uppercase; margin-bottom:16px; }
+.hindsight-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.hindsight-list li { position:relative; padding-left:20px; font-size:16px; line-height:1.55; color:var(--ink); overflow-wrap:break-word; }
+/* Puce ronde terracotta dessinée en CSS */
+.hindsight-list li::before { content:''; position:absolute; left:2px; top:.6em; width:7px; height:7px; border-radius:50%; background:var(--brown); }
+
+/* 768px et moins : blocs empilés */
+@media(max-width:768px) {
+  .hindsight { padding:0 16px 56px; }
+  .hindsight-inner { grid-template-columns:1fr; gap:16px; }
+}
+/* Sous 600px : padding des blocs réduit, comme .closing */
+@media(max-width:599px) {
+  .hindsight-block { padding:22px 18px; }
 }
 
 /* Repère centré au-dessus de la bande de stats */
@@ -573,7 +600,9 @@ nav {
       <li>Les C-level et les Head of cherchent leurs pairs, en petit comité, notamment pour remettre les mains dans le cambouis avec l'IA.</li>
       <li>La curation à la main fait la valeur. Elle ne se délègue pas.</li>
     </ul>
-    <p class="closing-sign">Merci à celles et ceux qui ont pris place.<br><strong>Manu</strong></p>
+    <p class="closing-sign">Merci à celles et ceux qui ont pris place.</p>
+    <!-- Signature : petit logo LinkedIn vers le profil de Manu -->
+    <p class="closing-author"><a class="closing-li" href="https://www.linkedin.com/in/emmanueldimarco/" target="_blank" rel="noopener" aria-label="Profil LinkedIn de Manu"><img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1776008304/LinkedIn_logo_initials_n44lw5.png" alt="" width="16" height="16"></a><strong>Manu</strong></p>
   </div>
   <div class="hero-proof fu d5">
     <div class="av-stack">
@@ -595,6 +624,30 @@ nav {
       <div class="av">+</div>
     </div>
     <p class="proof-txt"><strong>+220 product people</strong> intéressés par Nola à Paris. <strong>10 éditions, 20 tables</strong> entre novembre 2025 et octobre 2026.</p>
+  </div>
+</section>
+
+<!-- ── AVEC LE RECUL ── -->
+<section class="hindsight">
+  <span class="eyebrow hindsight-eyebrow">Avec le recul</span>
+  <div class="hindsight-inner">
+    <div class="hindsight-block">
+      <p class="hindsight-title">Si c'était à refaire</p>
+      <ul class="hindsight-list">
+        <li>M'adosser durablement à un média produit. Quand la bande passante est rare, la valeur se crée en s'appuyant sur ceux qui ont déjà l'audience.</li>
+        <li>Prendre le temps de trouver la bonne personne avec qui porter le projet.</li>
+        <li>Penser la récurrence dès le départ. Sans relances, le bouche-à-oreille ne suffit pas à cette taille. Il fonctionne quand une communauté existe déjà.</li>
+      </ul>
+    </div>
+    <div class="hindsight-block">
+      <p class="hindsight-title">Ce que j'ai refusé</p>
+      <ul class="hindsight-list">
+        <li>Rattacher Nola à une grande association existante.</li>
+        <li>En faire un business, y compris en BtoB.</li>
+        <li>Ouvrir les tables aux recruteurs.</li>
+        <li>Ne faire que des tables thématiques.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -722,15 +775,10 @@ nav {
       </li>
       <li class="tbl-row">
         <span class="tbl-month">Janvier 2026</span>
-        <span class="tbl-roles">CPO / CPTO · Lead PM · Senior PM· Senior PM· Product Designer</span>
+        <span class="tbl-roles">CPO / CPTO · Lead PM · Senior PM · Senior PM · Product Designer</span>
       </li>
     </ul>
     <p class="tables-caption">Saison 1, de novembre 2025 à juin 2026, close. Un extrait de 4 tables.</p>
-    <div class="tables-reassure">
-      <p>Personne ne vend rien. Pas de pitch, pas de recruteur en chasse.</p>
-      <p>Quelqu'un de Nola est toujours à table. Tout le monde ne dîne pas chaque mois.</p>
-      <p>On ne s'inscrit pas, on est placé.</p>
-    </div>
   </div>
 </section>
 
