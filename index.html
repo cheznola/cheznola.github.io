@@ -33,15 +33,6 @@
 <meta name="twitter:description" content="Des dîners en petit comité entre Product People. Pour prendre le temps d'échanger vraiment et (re)construire son cercle pro, autrement.">
 <meta name="twitter:image" content="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1766328298/Nola._3_ebrl57.png">
 
-<!-- ── GOOGLE ANALYTICS GA4 ── -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VNMLB94J4R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VNMLB94J4R');
-</script>
-
 <!-- ── FONTS ── -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,6 +192,25 @@ nav {
 .proof-txt { font-size:13px; color:var(--muted); }
 .proof-txt strong { color:var(--ink); font-weight:600; }
 .proof-txt sup { font-size:.7em; }
+
+/* ── CLÔTURE (encadré « Ce que ces tables m'ont appris ») ── */
+.closing { max-width:620px; margin:8px auto 40px; background:var(--brown-pale); border:1px solid rgba(200,117,66,.28); border-radius:12px; padding:28px 32px; text-align:left; }
+/* Titre : même style que .hero-badge */
+.closing-title { font-size:12px; font-weight:700; color:var(--brown-deep); letter-spacing:.07em; text-transform:uppercase; margin-bottom:16px; }
+.closing-list { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:22px; }
+.closing-list li { position:relative; padding-left:20px; font-size:16px; line-height:1.55; color:var(--ink); overflow-wrap:break-word; }
+/* Puce ronde terracotta dessinée en CSS */
+.closing-list li::before { content:''; position:absolute; left:2px; top:.6em; width:7px; height:7px; border-radius:50%; background:var(--brown); }
+.closing-sign { font-family:var(--serif); font-style:italic; font-size:19px; line-height:1.4; color:var(--ink); }
+.closing-sign strong { font-family:var(--sans); font-style:normal; font-weight:700; font-size:16px; }
+
+/* Sous 600px : padding de l'encadré réduit */
+@media(max-width:599px) {
+  .closing { padding:22px 18px; }
+}
+
+/* Repère centré au-dessus de la bande de stats */
+.stats-eyebrow { text-align:center; }
 
 /* ── STATS ── */
 .stats-strip { border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--cream); display:flex; flex-wrap:wrap; justify-content:center; }
@@ -511,7 +521,12 @@ nav {
   .footer-links { justify-content:center; }
   .footer-share { justify-content:center; }
 }
-a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!important;}
+
+/* Stats à 3 cases : sur mobile, une seule ligne de 3 au lieu de la grille 2×2 */
+@media(max-width:768px) {
+  .stat-item { flex:1 1 33.333%; padding:20px 8px; border-bottom:none; border-right:1px solid var(--border); }
+  .stat-item:last-child { border-right:none; }
+}
 </style>
 </head>
 <body>
@@ -526,8 +541,6 @@ a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!
   </ul>
   <div class="nav-right">
     <!-- NOUVEAU : bouton espace membre orange, avant le CTA -->
-    <a class="nav-membre is-disabled" aria-disabled="true" tabindex="-1">Espace membre →</a>
-    <a class="nav-cta is-disabled" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -541,25 +554,26 @@ a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!
   <a href="#how">Comment ça se passe <span>→</span></a>
   <a href="#avis">Témoignages <span>→</span></a>
   <a href="#faq">FAQ <span>→</span></a>
-  <a class="mobile-cta is-disabled" aria-disabled="true" tabindex="-1">Espace membre →</a>
 </div>
 
 <!-- ── HERO ── -->
 <section class="hero">
-  <div class="hero-badge fu d1">Depuis nov. 2025 · Paris</div>
+  <div class="hero-badge fu d1">Nov. 2025 - Oct. 2026 · Paris</div>
   <span class="hero-wordmark fu d2">Nola.</span>
-  <h1 class="fu d3">Des dîners qui <em>comptent,</em><br>entre Product People.</h1>
-  <p class="hero-def fu d3">Une table de 4 à 6 product people, 1 jeudi/mois, dans un bon restaurant. On ne vient pas pour réseauter. On vient avec les sujets qu’on ne peut pas toujours résoudre seul. Une décision à prendre. Une situation à débloquer. Un point de vue à confronter.</p>
-  <div class="hero-tags fu d3">
-    <span class="tag">PM/PO confirmés</span>
-    <span class="tag">Lead / Head</span>
-    <span class="tag">AI Product / Designer</span>
-    <span class="tag">C-level</span>
-  </div>
-  <p class="hero-sub fu d4">1x/mois. En petit comité.</p>
-  <div class="asso-pill fu d4">Association loi 1901 · Paris</div>
-  <div class="hero-actions fu d5">
-    <a class="btn-primary is-disabled" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
+  <h1 class="fu d3">Les tables <em>sont fermées.</em></h1>
+  <p class="hero-def fu d3">De novembre 2025 à octobre 2026, des product people se sont retrouvés à quelques-uns autour d'une table, à Paris. Je crois toujours au format. Mais il demande d'animer une communauté presque à plein temps, et ce temps, je ne l'ai plus.</p>
+  <!-- Message de clôture : ce que les tables ont appris -->
+  <div class="closing fu d4">
+    <p class="closing-title">Ce que ces tables m'ont appris</p>
+    <ul class="closing-list">
+      <li>Les product people ont soif de vraies conversations. Être acteur, pas spectateur.</li>
+      <li>En petit comité, les langues se délient. On y débloque son quotidien, ses transitions.</li>
+      <li>Le bon moment pour créer du lien, c'est avant d'en avoir besoin.</li>
+      <li>Le temps est la vraie barrière, pas l'envie. Pour une partie d'entre eux, le midi passe mieux que le soir.</li>
+      <li>Les C-level et les Head of cherchent leurs pairs, en petit comité, notamment pour remettre les mains dans le cambouis avec l'IA.</li>
+      <li>La curation à la main fait la valeur. Elle ne se délègue pas.</li>
+    </ul>
+    <p class="closing-sign">Merci à celles et ceux qui ont pris place.<br><strong>Manu</strong></p>
   </div>
   <div class="hero-proof fu d5">
     <div class="av-stack">
@@ -580,39 +594,18 @@ a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!
       <img class="av" src="https://res.cloudinary.com/dtjcum3gb/image/upload/c_thumb,g_face,r_max,w_160,h_160,f_auto,q_auto,dpr_2.0/v1787916307/1537376287021_bj5rb1.jpg" width="30" height="30" loading="lazy" decoding="async" alt="">
       <div class="av">+</div>
     </div>
-    <p class="proof-txt">Déjà <strong>+170 product people</strong> intéressés par Nola à Paris. <strong>8 éditions, 20 tables</strong> depuis novembre 2025. La saison 2 reprend le <strong>17 septembre</strong>.</p>
+    <p class="proof-txt"><strong>+220 product people</strong> intéressés par Nola à Paris. <strong>10 éditions, 20 tables</strong> entre novembre 2025 et octobre 2026.</p>
   </div>
 </section>
 
 <!-- ── STATS ── -->
+<!-- Repère : le reste de la page décrit Nola au passé -->
+<span class="eyebrow stats-eyebrow">À quoi ressemblait Nola</span>
 <div class="stats-strip">
   <div class="stat-item"><span class="stat-n">1</span><span class="stat-l">Édition par mois</span></div>
-  <div class="stat-item"><span class="stat-n">1</span><span class="stat-l">Table par mois</span></div>
   <div class="stat-item"><span class="stat-n">4–6</span><span class="stat-l">Membres par table</span></div>
   <div class="stat-item"><span class="stat-n">20</span><span class="stat-l">Tables depuis novembre 2025</span></div>
 </div>
-
-<!-- ── PROCHAINE TABLE (bandeau compact) ── -->
-<section class="next-strip">
-  <div class="next-strip-inner">
-    <div class="next-strip-text">
-      <span class="next-strip-title">Prochaine table</span>
-      <span class="next-strip-ctx">Saison 2 · Reprise le jeudi 17 septembre 2026, 19h30</span>
-    </div>
-    <a class="btn-primary next-strip-cta is-disabled" aria-disabled="true" tabindex="-1">Se joindre à la table →</a>
-  </div>
-</section>
-
-<!-- ── CE QUI CHANGE EN SAISON 2 ── -->
-<section class="season2">
-  <div class="season2-inner">
-    <span class="eyebrow">En saison 2</span>
-    <p>Le rythme est publié à l'avance. 4 dates jusqu'en décembre, connues dès la reprise.</p>
-    <p>Une table par mois, c'est le cœur. La table Originals, quatre à six personnes, composée une par une. C'est le point fixe de la saison. <a href="/manifeste" class="season2-link">Pourquoi ce choix →</a></p>
-    <p>Parfois, une table en plus. Rare, très ciblée : un rôle, un thème, une ville. Certaines pourront être imaginées avec un partenaire. Jamais pour faire du volume, toujours pour une raison précise. L'Originals, elle, ne bouge pas.</p>
-    <p>Ce n'est pas un meetup. À 4 ou 6 autour d'une table, on est acteur et non spectateur. Sur l'Originals, ni intervenant, ni programme, ni thème imposé.</p>
-  </div>
-</section>
 
 <!-- ── TICKER ── -->
 <div class="ticker-wrap">
@@ -681,7 +674,6 @@ a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!
           <div class="step-body"><strong>Tu reçois le lieu, puis tu découvres ta table</strong><span>Le lieu quelques jours avant. Tes convives, à table.</span></div>
         </div>
         <p class="how-location">Les dîners ont lieu dans des restaurants parisiens. Le lieu exact est communiqué quelques jours avant, une fois la table composée.</p>
-        <a class="btn-primary btn-how is-disabled" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
       </div>
       <div class="how-visual" style="background:none;border:none;padding:0;overflow:hidden;">
         <img
@@ -708,14 +700,13 @@ a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!
   </div>
 </section>
 
-<!-- ── SAISON (affiche 4 dates — seul bloc sombre du corps) ── -->
+<!-- ── BILAN (remplace l'affiche de reprise — seul bloc sombre du corps) ── -->
 <section class="section-saison" id="saison">
-  <span class="saison-eyebrow">La reprise</span>
-  <p class="saison-lead">Jeudi 17 septembre 2026<span class="saison-lead-time">19h30</span></p>
-  <p class="saison-rest">8 octobre · 5 novembre · 10 décembre</p>
-  <span class="saison-cadence">Les jeudis, 19h30</span>
-  <p class="saison-note">Chaque date, une table de 4 à 6. Les places sont comptées. On demande sa place depuis l'espace membre, une fois Nola rejoint.</p>
-  <a class="btn-primary is-disabled" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
+  <span class="saison-eyebrow">Le bilan</span>
+  <p class="saison-lead">Une année de tables.<span class="saison-lead-time">Novembre 2025 · Octobre 2026</span></p>
+  <p class="saison-rest">10 éditions · 20 tables · +220 product people</p>
+  <span class="saison-cadence">Les jeudis soir, à Paris</span>
+  <p class="saison-note">Nola s'arrête là. Les liens noués autour des tables, eux, restent entre celles et ceux qui s'y sont assis.</p>
 </section>
 
 <!-- ── QUI EST À TABLE (réassurance seniors) ── -->
@@ -828,7 +819,6 @@ a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!
     <li>L'adhésion à l'association est incluse.</li>
   </ul>
   <p class="orig-balance">Niveaux d'expérience comparables, attention portée à la mixité. Le dîner se règle au restaurant, chacun selon ce qu'il commande.</p>
-  <a class="btn-primary is-disabled" style="font-size:15px;padding:14px 36px;" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
 </section>
 
 <!-- ── CONVERSATIONS ── -->
@@ -859,10 +849,9 @@ a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!
 <!-- ── MID CTA ── -->
 <section class="section-mid-cta">
   <span class="mid-logo">Nola.</span>
-  <p class="mid-desc">Déjà +170 Product People curieux à Paris.</p>
+  <p class="mid-desc">+220 Product People curieux à Paris.</p>
   <p class="mid-desc">PM, AI Product, CPO, Designers, Data… chaque table est différente.</p>
   <span class="mid-italic">👉 Et toi, tu demandes ta place ?</span>
-  <a class="btn-white is-disabled" aria-disabled="true" tabindex="-1">Rejoindre une table →</a>
 </section>
 
 <!-- ── FAQ ── -->
@@ -920,8 +909,7 @@ a.is-disabled{pointer-events:none;cursor:not-allowed;opacity:.45;transform:none!
     <div>
       <span class="footer-hero-logo">Nola.</span>
       <h3>On ne s'inscrit pas.<br><strong>On y est invité.</strong></h3>
-      <p>Prochaine table : jeudi 17 septembre, 19h30.</p>
-      <a class="btn-primary is-disabled" aria-disabled="true" tabindex="-1">Se joindre à la table →</a>
+      <p>Dernière table : octobre 2026. Merci d'avoir pris place.</p>
     </div>
     <div class="footer-hero-img">
       <img src="https://res.cloudinary.com/dtjcum3gb/image/upload/q_auto/f_auto/v1775985223/Nola_footer_q2xscn.png" alt="Ambiance Nola">
